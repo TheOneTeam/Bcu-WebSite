@@ -3,15 +3,15 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />    
     <asp:ContentPlaceHolder runat="server" ID="TitleContent"></asp:ContentPlaceHolder>
     <link rel="stylesheet" type="text/css" href="css/fw.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <form runat="server">
-    <div class="wrapper">
+        <div class="wrapper">
             <div class="header">
     			<div class="top-bar">
                     <div class="container">
@@ -23,10 +23,10 @@
                     </div>  
                 </div>
                 <div class="container p-t20 p-b20">
-                	<a href=""><img class="m" style="height: 50px;" src="images/logo.jpg"></a>
+                	<a class="lt" href=""><img class="m" style="height: 50px;" src="/images/logo.jpg"></a>
                 	<div class="rt hd-info trt">
                         <p class="">
-                            <a class="cl777" href="">首页</a>
+                            <a class="cl777">首页</a>
                             <span>|</span>
                             <a class="cl777" href="">我们</a>
                             <span>|</span>
@@ -37,29 +37,30 @@
                             <span>baoyuehan@byh.com</span>
                         </p>
                     </div>
+                    <div class="clear"></div>
                 </div>
                 <div class="hd-nav">
                     <div class="container">
                         <ul class="hd-nav-ul b">
                             <li>
-                                <a class="current" href="/Default.aspx">首页</a>
+                                <a class="current" href="">首页</a>
                             </li>
                             <li>
                                 <a href="">关于BCU</a>
                                 <div class="nav-two-div">
-                                    <a href="./page/about/university.aspx">大学介绍</a>
-                                    <a href="./page/about/college.aspx">学部介绍</a>
-                                    <a href="./page/about/faculty.aspx">特色学院介绍</a>
+                                    <a href="">大学介绍</a>
+                                    <a href="">学部介绍</a>
+                                    <a href="">特色学院介绍</a>
                                 </div>
                             </li>
                             <li>
                                 <a href="">课程安排</a>
                                 <div class="nav-two-div">
-                                    <a href="./page/course/admisrequire.aspx">入学要求</a>
-                                    <a href="./page/course/english.aspx">英语语言课程</a>
-                                    <a href="./page/course/bcldge.aspx">学士学位课程</a>
-                                    <a href="./page/course/masterdge.aspx">硕士学位课程</a>
-                                    <a href="./page/course/doctor.aspx">博士学位课程</a>
+                                    <a href="">入学要求</a>
+                                    <a href="">英语语言课程</a>
+                                    <a href="">学士学位课程</a>
+                                    <a href="">硕士学位课程</a>
+                                    <a href="">博士学位课程</a>
                                 </div>
                             </li>
                             <li>
@@ -74,72 +75,85 @@
                             <li>
                                 <a href="">国内合作</a>
                                 <div class="nav-two-div">
-                                    <a href="./page/cooperation/dbcldge.aspx">2+2双学士学位项目</a>
-                                    <a href="./page/cooperation/dmasterdge.aspx">1+1 双硕士项目</a>
-                                    <a href="./page/cooperation/exchangepro.aspx">中英短期交流生项目</a>
-                                    <a href="./page/cooperation/cptinstitute.aspx">国内合作学院</a>
-                                    <a href="./page/cooperation/summercamp.aspx">Summer School 英国学术夏令营</a>
-                                    <a href="./page/cooperation/foundationpro.aspx">预科项目</a>
+                                    <a href="">2+2双学士学位项目</a>
+                                    <a href="">1+1 双硕士项目</a>
+                                    <a href="">中英短期交流生项目</a>
+                                    <a href="">国内合作学院</a>
+                                    <a href="">Summer School 英国学术夏令营</a>
+                                    <a href="">预科项目</a>
                                 </div>
                             </li>
                             <li>
                                 <a href="">HND升学</a>
                                 <div class="nav-two-div">
-                                    <a href="./page/cooperation/admisrequire.aspx">入学要求</a>
-                                    <a href="./page/cooperation/course.aspx">课程对接</a>
-                                    <a href="./page/cooperation/guide.aspx">申请指南</a>
+                                    <a href="">入学要求</a>
+                                    <a href="">课程对接</a>
+                                    <a href="">申请指南</a>
                                 </div>
                             </li>
                             <li>
                                 <a href="">校园生活</a>
                                 <div class="nav-two-div">
-                                    <a href="./page/live/stay.aspx">学校住宿</a>
-                                    <a href="./page/live/service.aspx">国际学生服务</a>
-                                    <a href="./page/live/student.aspx">优秀毕业生</a>
-                                    <a href="./page/live/activity.aspx">学生活动</a>
-                                    <a href="./page/live/parttimejob.aspx">兼职机会</a>
+                                    <a href="">学校住宿</a>
+                                    <a href="">国际学生服务</a>
+                                    <a href="">优秀毕业生</a>
+                                    <a href="">学生活动</a>
+                                    <a href="">兼职机会</a>
                                 </div>
                             </li>
                             <li>
-                                <a href="././page/contact.aspx">联系我们</a>
+                                <a href="">联系我们</a>
                             </li>
                         </ul>
                     </div> 
                 </div>
             </div>
-    <div class="content">
-            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
-    </div>
-    <div class="footer">
-                <div class="container">
-                    <div class="lt ft-nav">
-                        <p class="ft-p1 fz-14 b">关于我们</p>
-                        <ul class="ft-nav-ul m-l20">
-                            <li><a class="ft-a1">我们的优势</a></li>
-                            <li><a class="ft-a1">师资力量</a></li>
-                            <li><a class="ft-a1">团队能力</a></li>
-                        </ul>
+            <div class="content">
+                <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+            </div>
+            <div class="footer m-t20">
+                <div class="container oflow">
+                    <div class="footer_1 lt">
+                        <p>英国伯明翰城市大学上海代表处</p>
+                        <p>电话：+86-21-61221116（申请热线） &nbsp;+86-21-61221117（咨询热线）</p>
+                        <p class="m-l30"></p>
+                        <p class="m-l30">&nbsp;+86-21-61221118（合作热线）</p>
+                        <p>邮箱： application@bcuchina.cn</p>
+                        <p>地址：上海市卢湾区湖滨路222号企业天地一号1569室</p>
+                        <p>邮编： 200021</p>
                     </div>
-                    <div class="lt" style="margin-left: 350px;">
-                        <div class="fz-14 b ft-sh-tt m-t20">
-                            英国伯明翰城市大学上海代表处 
+                    <div class="footer_2 lt">
+                        <div class="lt m-r20">
+                            <div class="fot-tt">Social Media</div>
+                            <p>
+                                <a class="f1" href="http://t.sina.com/bcuchina">新浪微博</a>
+                                <a class="f2" href="http://qun.qq.com/air/#117862370">QQ空间</a>
+                            </p>
+                            <p>
+                                关注微信 扫一扫
+                                <!-- <span class="weixin"></span> -->
+                                <p>
+                                    <img src="/images/ewm.png" width="80" style="">
+                                </p>
+                            </p>  
+                        </div>                    
+                        <div class="lt m-r5">
+                            <div class="fot-tt" style="font-size:12px;">查询课程信息</div>
+                            <p style="width:165px;">
+                                 联系我们以及更多内容尽在<a style="color: #fff;" href="http://itunes.apple.com/app/ibcu/id375319801?mt=8">iBCU iPhone app</a>
+                            </p>
+                            <div class="iphone-app-bg"></div>
                         </div>
-                        <div class="form-group rt">
-                            <input type="text" class="hd-input" placeholder="搜索关键字">
-                            <button type="submit" class="hd-btn">搜索</button>
+                        <div class="lt">
+                            <img src="/Images/logo.jpg" width="250">                            
+                            <p style="width:265px;">
+                                关于我们: 英国伯明翰城市大学企业有限公司上海代表处是由英国伯明翰城市大学在中国上海创办的代表处Copyright 2009   沪IP备05054566号                                
+                            </p>                            
                         </div>
-                    </div>
-                    <div class="rt ft-nav">
-                        <p class="ft-p1 fz-14 b">联系方式</p>
-                        <ul class="ft-nav-ul m-l10">
-                            <li><a class="ft-a1">我们的电话</a></li>
-                            <li><a class="ft-a1">我们的邮箱</a></li>
-                            <li><a class="ft-a1">在线客服</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
-		</div> 
+        </div>
     </form>
 </body>
 </html>
