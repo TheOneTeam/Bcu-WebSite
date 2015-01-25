@@ -38,39 +38,18 @@
 .ct-tps{ background: #444444; height: 90px; padding: 20px;}
 .ct-tps p{ color: #fff; line-height: 30px;}
 .ct-tps p.p2{ line-height: 25px;}
-.ct-lists-tt{ color: #395873; line-height: 45px; padding-left: 15px; border-bottom: 2px solid #92B3CE;}
+.ct-lists-tt{ color: #395873; line-height: 45px; padding-left: 15px; width: 100px; border-bottom: 2px solid #92B3CE; margin-bottom: -2px;}
 .ct-lists-cont{ background: #F5F5F5; overflow: hidden; padding: 15px 0px;}
-.ct-lists-prev,.ct-lists-next{ width: 30px; font-size: 50px; font-weight: bold; color: #999; cursor: pointer; border-radius: 3px; text-align: center; height: 280px; line-height: 280px; }
+.ct-lists-prev,.ct-lists-next{ width: 45px; font-size: 50px; font-weight: bold; color: #999; cursor: pointer; border-radius: 3px; text-align: center; height: 309px; line-height: 309px; }
 .ct-lists-prev:hover,.ct-lists-next:hover{ color: #000;}
 .ct-lists-next{}.ct-lists-ul{}
-.ct-lists-ops{ width: 1110px; overflow: hidden;}
+.ct-lists-ops{ width: 1080px; overflow: hidden;}
 .ct-lists-ul{ width: 2000px;}
-.ct-lists-ul li{ width: 208px; padding-top: 185px; position: relative; float: left; box-shadow: 0px 0px 3px 1px #999; line-height: 25px; margin: 15px 13px 15px 3px; overflow: hidden;}
-.ct-lists-ul li img{ width: 208px; position: absolute; top: 0px; left: 0px; float: left; margin-bottom: 5px;}
-.ct-lists-ul li p{ position: relative; z-index: 2; background: #fff;}
-.ct-lists-ul li .p2{ padding: 0px 5px; line-height: 20px;}
-.ptime{ padding: 0px 5px; line-height: 25px; text-align: right;}
-.footer{padding: 20px 0px; font-size: 12px; min-height: 150px; background: #000; }
-.footer_1{ background: url(../images/bg-map.png) no-repeat 420px center; background-size: auto 100%; width: 545px;}
-.footer_1 p{ line-height: 25px; color: #fff;}
-.footer_2{ width: 604px; padding-left: 20px; line-height: 25px; color: #fff; border-left: 1px solid #fff;}
-.fot-tt{ font-weight: bold; font-size: 16px;}
-.f1,.f2{ background: url(../images/a22.gif) no-repeat left center; padding-left: 25px; display: inline-block; height: 23px; color: #fff;}
-.f2{ background-image: url(../images/a21.gif) }
-.weixin{ background: url(../images/ewm.png) no-repeat center; width: 125px; height: 125px; display: block;}
-.iphone-app-bg{ background: url(../images/iphone-app.gif); width: 155px; height: 54px; margin-top: 5px;}
-.fot-logo{ background: url(../images/a4.gif); width: 248px; height: 101px; }
-
-.ct-lists-tt{ border-bottom: solid 1px #d2d2d2; margin: 0px 30px;}
-.ct-tps-btn { width: 165px; height: 48px; line-height: 48px; font-size: 18px; font-family: "微软雅黑"; margin: 20px 0px 0px 30px; text-align: center; color: #fff; background: #6091ba;display: inline-block;}
-
-.page-cont{ padding: 20px 0px;}
-.page-lt{ width: 800px; float: left;}
-.page-rt{ width:350px; float: right;}
-.page-hd-img{ width: 800px; height: 200px;}
-.page-tt{ border-bottom: 1px solid #e8e8e8; margin-bottom: 30px; height: 48px;}
-.page-h1{ font-size: 28px; color: #333; font-family: "黑体";}
-.page-menu{ margin-top: 25px;}
-.page-menu a{ margin: 5px;}
-.page-cont-txt{ line-height: 25px;}
-.page-block{ font-size: 24px; line-height: 40px;}
+.ct-lists-ul li{ width: 230px; float: left; padding: 10px; background: #fff; line-height: 25px; margin-right: 25px;}
+.ct-lists-ul li img{ width: 230px; height: 200px;}
+.footer{padding: 30px 0; font-size: 12px; min-height: 150px; background: #121212;}
+.ft-nav p{ color: #fff; line-height: 30px;}
+.ft-a1{ color: #fff; line-height: 30px;}
+.ft-nav-ul li{ list-style: inherit;}
+.ft-sh-tt{ color: #fff; margin-bottom: 20px;}
+.ct-tps-btn{ width: 165px; height: 48px; line-height: 48px; font-size: 18px; font-family: "黑体"; margin: 20px 0px 0px 30px; text-align: center;color: #fff; background: #6091ba; display: inline-block;}
