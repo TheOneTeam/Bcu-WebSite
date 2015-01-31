@@ -1,17 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="exchangepro.aspx.cs" Inherits="WebSite.page.cooperation.exchangepro" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="exchangepro.aspx.cs" Inherits="WebSite.page.cooperation.exchangepro" %>
+<asp:Content runat="server" ID="TitleContent" ContentPlaceHolderID="TitleContent">
+    <title>中英短期交流生项目</title>
+</asp:Content>
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+</asp:Content>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
-    </form>
-</body>
-</html>

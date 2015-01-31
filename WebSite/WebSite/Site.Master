@@ -43,24 +43,24 @@
                     <div class="container">
                         <ul class="hd-nav-ul b">
                             <li>
-                                <a class="current" href="">首页</a>
+                                <a class="current" href="/Default.aspx">首页</a>
                             </li>
                             <li>
                                 <a href="">关于BCU</a>
                                 <div class="nav-two-div">
-                                    <a href="">大学介绍</a>
-                                    <a href="">学部介绍</a>
-                                    <a href="">特色学院介绍</a>
+                                    <a href="/page/about/university.aspx">大学介绍</a>
+                                    <a href="/page/about/colleges.aspx">学院介绍</a>
+                                    <a href="/page/about/faculty.aspx">特色学院介绍</a>
                                 </div>
                             </li>
                             <li>
                                 <a href="">课程安排</a>
                                 <div class="nav-two-div">
-                                    <a href="">入学要求</a>
-                                    <a href="">英语语言课程</a>
-                                    <a href="">学士学位课程</a>
-                                    <a href="">硕士学位课程</a>
-                                    <a href="">博士学位课程</a>
+                                    <a href="/page/course/admisrequire.aspx">入学要求</a>
+                                    <a href="/page/course/english.aspx">英语语言课程</a>
+                                    <a href="/page/course/bcldge.aspx">学士学位课程</a>
+                                    <a href="/page/course/masterdge.aspx">硕士学位课程</a>
+                                    <a href="/page/course/doctor.aspx">博士学位课程</a>
                                 </div>
                             </li>
                             <li>
@@ -75,34 +75,34 @@
                             <li>
                                 <a href="">国内合作</a>
                                 <div class="nav-two-div">
-                                    <a href="">2+2双学士学位项目</a>
-                                    <a href="">1+1 双硕士项目</a>
-                                    <a href="">中英短期交流生项目</a>
-                                    <a href="">国内合作学院</a>
-                                    <a href="">Summer School 英国学术夏令营</a>
-                                    <a href="">预科项目</a>
+                                    <a href="/page/cooperation/dbcldge.aspx">2+2双学士学位项目</a>
+                                    <a href="/page/cooperation/dmasterdge.aspx">1+1 双硕士项目</a>
+                                    <a href="/page/cooperation/exchangepro.aspx">中英短期交流生项目</a>
+                                    <a href="/page/cooperation/cptinstitute.aspx">国内合作学院</a>
+                                    <a href="/page/cooperation/summercamp.aspx">Summer School 英国学术夏令营</a>
+                                    <a href="/page/cooperation/foundationpro.aspx">预科项目</a>
                                 </div>
                             </li>
                             <li>
                                 <a href="">HND升学</a>
                                 <div class="nav-two-div">
-                                    <a href="">入学要求</a>
-                                    <a href="">课程对接</a>
-                                    <a href="">申请指南</a>
+                                    <a href="/page/hnd/admisrequire.aspx">入学要求</a>
+                                    <a href="/page/hnd/course.aspx">课程对接</a>
+                                    <a href="/page/hnd/guide.aspx">申请指南</a>
                                 </div>
                             </li>
                             <li>
                                 <a href="">校园生活</a>
                                 <div class="nav-two-div">
-                                    <a href="">学校住宿</a>
-                                    <a href="">国际学生服务</a>
-                                    <a href="">优秀毕业生</a>
-                                    <a href="">学生活动</a>
-                                    <a href="">兼职机会</a>
+                                    <a href="/page/live/stay.aspx">学校住宿</a>
+                                    <a href="/page/live/service.aspx">国际学生服务</a>
+                                    <a href="/page/live/student.aspx">优秀毕业生</a>
+                                    <a href="/page/live/activity.aspx">学生活动</a>
+                                    <a href="/page/live/parttimejob.aspx">兼职机会</a>
                                 </div>
                             </li>
                             <li>
-                                <a href="">联系我们</a>
+                                <a href="/page/contact.aspx">联系我们</a>
                             </li>
                         </ul>
                     </div> 

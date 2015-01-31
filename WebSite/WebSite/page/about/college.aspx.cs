@@ -11,6 +11,14 @@ namespace WebSite.page.about
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            { 
+            
+            }
+        }
+
+        private void BindData()
+        {
 
         }
     }

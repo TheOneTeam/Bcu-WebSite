@@ -1,17 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dmasterdge.aspx.cs" Inherits="WebSite.page.cooperation.dmasterdge" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
-    </form>
-</body>
-</html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="dmasterdge.aspx.cs" Inherits="WebSite.page.cooperation.dmasterdge" %>
+<asp:Content runat="server" ID="TitleContent" ContentPlaceHolderID="TitleContent">
+    <title>1+1双硕士学位项目</title>
+</asp:Content>
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+</asp:Content>
