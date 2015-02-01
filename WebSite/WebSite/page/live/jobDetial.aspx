@@ -1,21 +1,21 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="dbcldge.aspx.cs" Inherits="WebSite.page.cooperation.dbcldge" %>
-<asp:Content runat="server" ID="TitleContent" ContentPlaceHolderID="TitleContent">
-    <title>2+2双学士学位项目</title>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="jobDetial.aspx.cs" Inherits="WebSite.page.live.jobDetial" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    <title>学校食堂洗碗钟点工</title>
 </asp:Content>
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container rel">
         <div class="page-cont">
             <div class="page-tt">
-                <h1 class="page-h1 lt">2+2双学士学位项目</h1>
+                <h1 class="page-h1 lt">学校食堂洗碗钟点工</h1>
                 <div class="page-menu rt">
-                    <a href="/">返回首页</a>><a>2+2双学士学位项目</a>
+                    <a href="/">返回首页</a>><a>学校食堂洗碗钟点工</a>
                 </div>
                 <div class="clear"></div>
             </div>
             <div class="page-lt">
                 <img class="page-hd-img" src="http://www.bcuchina.cn/images/a34.gif">
                 <div class="page-cont-txt">
-                    伯明翰城市大学（原中央英格兰大学）是英国最大的现代化，综合性的高等学府之一，其历史最早可追述到1843年。位于第二大城市伯明翰，大学共有25,000多名在校学生，其下属学院包括：<br>
+                    学校食堂洗碗钟点工
                     <span class="STYLE1">商学院<br>
                         伯明翰艺术设计学院<br>
                         教育,法律和社会科学学院<br>
