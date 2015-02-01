@@ -84,7 +84,7 @@ namespace WebSite.DataProvider
 
         public static List<cooperationSet> GetList(int pageIndex, int pageSize)
         {
-            var recordIndex = pageSize * pageIndex;
+            var recordIndex = pageIndex == 1 ? 0 : pageSize * pageIndex;
             using (var edm = new BcuEntities())
             {
                 return edm.cooperationSet.OrderBy(x => x.title).Skip(recordIndex).Take(pageSize).ToList();

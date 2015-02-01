@@ -83,7 +83,7 @@ namespace WebSite.DataProvider
 
         public static List<folderSet> GetList(int pageIndex, int pageSize)
         {
-            var recordIndex = pageSize * pageIndex;
+            var recordIndex = pageSize == 1 ? 0 : pageSize * pageIndex;
             using (var edm = new BcuEntities())
             {
                 return edm.folderSet.OrderBy(x => x.sort).Skip(recordIndex).Take(pageSize).ToList();

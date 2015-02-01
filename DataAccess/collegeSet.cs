@@ -17,8 +17,9 @@ namespace DataAccess
         public int Id { get; set; }
         public string name { get; set; }
         public string desc { get; set; }
-        public string creatTime { get; set; }
+        public System.DateTime createTime { get; set; }
         public string content { get; set; }
-        public string sort { get; set; }
+        public int sort { get; set; }
+        public string img { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace DataAccess
         public string fid { get; set; }
         public string name { get; set; }
         public string path { get; set; }
-        public string createTime { get; set; }
+        public System.DateTime createTime { get; set; }
         public string extension { get; set; }
     }
 }

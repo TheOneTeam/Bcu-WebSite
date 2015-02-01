@@ -88,10 +88,10 @@ namespace WebSite.DataProvider
 
         public static List<activitySet> GetList(int pageIndex, int pageSize)
         {
-            var recordIndex = pageSize * pageIndex;
+            var recordIndex = pageIndex == 1 ? 0 : pageSize * pageIndex;
             using (var edm = new BcuEntities())
             {
-                return edm.activitySet.OrderBy(x => x.createTime).Skip(recordIndex).Take(pageSize).ToList();
+                return edm.activitySet.OrderByDescending(x => x.createTime).Skip(recordIndex).Take(pageSize).ToList();
             }
             return null;
         }

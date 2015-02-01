@@ -17,5 +17,7 @@ namespace DataAccess
         public int Id { get; set; }
         public string title { get; set; }
         public string content { get; set; }
+        public System.DateTime createTime { get; set; }
+        public int status { get; set; }
     }
 }

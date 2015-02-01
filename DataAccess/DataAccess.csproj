@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="activitySet.cs">
+      <DependentUpon>Bcu.tt</DependentUpon>
+    </Compile>
     <Compile Include="attachmentSet.cs">
       <DependentUpon>Bcu.tt</DependentUpon>
     </Compile>
@@ -77,13 +80,22 @@
     <Compile Include="courseSet.cs">
       <DependentUpon>Bcu.tt</DependentUpon>
     </Compile>
+    <Compile Include="dictSet.cs">
+      <DependentUpon>Bcu.tt</DependentUpon>
+    </Compile>
     <Compile Include="folderSet.cs">
+      <DependentUpon>Bcu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jobSet.cs">
       <DependentUpon>Bcu.tt</DependentUpon>
     </Compile>
     <Compile Include="newsSet.cs">
       <DependentUpon>Bcu.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="studentSet.cs">
+      <DependentUpon>Bcu.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Bcu.edmx">

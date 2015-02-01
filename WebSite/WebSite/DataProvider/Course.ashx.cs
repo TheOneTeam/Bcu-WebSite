@@ -85,10 +85,10 @@ namespace WebSite.DataProvider
 
         public static List<courseSet> GetList(int pageIndex,int pageSize)
         {
-            var recordIndex = pageSize * pageIndex;
+            var recordIndex = pageIndex == 1 ? 0 : pageSize * pageIndex;
             using (var edm = new BcuEntities())
             {
-                return edm.courseSet.OrderBy(x => x.sort).Skip(recordIndex).Take(pageSize).ToList();
+                return edm.courseSet.OrderBy(x => x.sort).ThenByDescending(x => x.createTime).Skip(recordIndex).Take(pageSize).ToList();
             }
             return null;
         }

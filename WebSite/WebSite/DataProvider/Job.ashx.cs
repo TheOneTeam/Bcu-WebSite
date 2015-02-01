@@ -87,7 +87,7 @@ namespace WebSite.DataProvider
 
         public static List<jobSet> GetList(int pageIndex, int pageSize)
         {
-            var recordIndex = pageSize * pageIndex;
+            var recordIndex = pageIndex == 1 ? 0 : pageSize * pageIndex;
             using (var edm = new BcuEntities())
             {
                 return edm.jobSet.OrderByDescending(x => x.createTime).Skip(recordIndex).Take(pageSize).ToList();

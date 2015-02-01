@@ -4,7 +4,20 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BcuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BcuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="activitySet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar(max)" />
+          <Property Name="bTime" Type="datetime" Nullable="false" />
+          <Property Name="address" Type="nvarchar(max)" />
+          <Property Name="content" Type="nvarchar(max)" />
+          <Property Name="createTime" Type="datetime" Nullable="false" />
+          <Property Name="eTime" Type="datetime" Nullable="false" />
+          <Property Name="imgPath" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="attachmentSet">
           <Key>
             <PropertyRef Name="Id" />
@@ -12,8 +25,8 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fid" Type="nvarchar(max)" Nullable="false" />
           <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="path" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="createTime" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="path" Type="nvarchar(max)" />
+          <Property Name="createTime" Type="datetime" Nullable="false" />
           <Property Name="extension" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="collegeSet">
@@ -21,11 +34,12 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="desc" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="creatTime" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="content" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="sort" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="desc" Type="nvarchar(max)" />
+          <Property Name="createTime" Type="datetime" Nullable="false" />
+          <Property Name="content" Type="nvarchar(max)" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="img" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="contactSet">
           <Key>
@@ -33,7 +47,9 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="title" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="content" Type="nvarchar(max)" />
+          <Property Name="createTime" Type="datetime" Nullable="false" />
+          <Property Name="status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="cooperationSet">
           <Key>
@@ -41,18 +57,33 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="title" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="content" Type="nvarchar(max)" />
+          <Property Name="createTime" Type="datetime" Nullable="false" />
+          <Property Name="status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="courseSet">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="content" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="introduction" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="img" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="sort" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="content" Type="nvarchar(max)" />
+          <Property Name="introduction" Type="nvarchar(max)" />
+          <Property Name="img" Type="nvarchar(max)" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="createTime" Type="datetime" Nullable="false" />
+          <Property Name="type" Type="int" Nullable="false" />
+          <Property Name="release" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dictSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="varchar(max)" />
+          <Property Name="content" Type="varchar(max)" />
+          <Property Name="balanceImg" Type="varchar(max)" />
+          <Property Name="key" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="folderSet">
           <Key>
@@ -61,6 +92,20 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="path" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="jobSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar(max)" />
+          <Property Name="company" Type="nvarchar(max)" />
+          <Property Name="address" Type="nvarchar(max)" />
+          <Property Name="salary" Type="nvarchar(max)" />
+          <Property Name="content" Type="nvarchar(max)" />
+          <Property Name="desc" Type="nvarchar(max)" />
+          <Property Name="createTime" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="newsSet">
           <Key>
@@ -69,179 +114,313 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="title" Type="nvarchar(max)" Nullable="false" />
           <Property Name="content" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="createTime" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="createTime" Type="datetime" Nullable="false" />
           <Property Name="img" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="sort" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="studentSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="course" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="desc" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="imgPath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="createTime" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityContainer Name="BcuModelStoreContainer">
+          <EntitySet Name="activitySet" EntityType="Self.activitySet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="attachmentSet" EntityType="Self.attachmentSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="collegeSet" EntityType="Self.collegeSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="contactSet" EntityType="Self.contactSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cooperationSet" EntityType="Self.cooperationSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="courseSet" EntityType="Self.courseSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dictSet" EntityType="Self.dictSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="folderSet" EntityType="Self.folderSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="jobSet" EntityType="Self.jobSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="newsSet" EntityType="Self.newsSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="studentSet" EntityType="Self.studentSet" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BcuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BcuEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="activitySet" EntityType="BcuModel.activitySet" />
+          <EntitySet Name="attachmentSet" EntityType="BcuModel.attachmentSet" />
+          <EntitySet Name="collegeSet" EntityType="BcuModel.collegeSet" />
+          <EntitySet Name="contactSet" EntityType="BcuModel.contactSet" />
+          <EntitySet Name="cooperationSet" EntityType="BcuModel.cooperationSet" />
+          <EntitySet Name="courseSet" EntityType="BcuModel.courseSet" />
+          <EntitySet Name="folderSet" EntityType="BcuModel.folderSet" />
+          <EntitySet Name="jobSet" EntityType="BcuModel.jobSet" />
+          <EntitySet Name="newsSet" EntityType="BcuModel.newsSet" />
+          <EntitySet Name="studentSet" EntityType="BcuModel.studentSet" />
+          <EntitySet Name="dictSet" EntityType="BcuModel.dictSet" />
+        </EntityContainer>
+        <EntityType Name="activitySet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="createTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="eTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="imgPath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="attachmentSet">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="fid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="createTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="extension" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fid" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="createTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="extension" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="collegeSet">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="creatTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="sort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="createTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="img" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="contactSet">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="createTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="cooperationSet">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="createTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="status" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="courseSet">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="introduction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="sort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="introduction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="createTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="type" Type="Int32" Nullable="false" />
+          <Property Name="release" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="folderSet">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="path" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="jobSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="company" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="salary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="createTime" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="newsSet">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="createTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="sort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="createTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="img" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="BcuEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="attachmentSet" EntityType="Self.attachmentSet" />
-          <EntitySet Name="collegeSet" EntityType="Self.collegeSet" />
-          <EntitySet Name="contactSet" EntityType="Self.contactSet" />
-          <EntitySet Name="cooperationSet" EntityType="Self.cooperationSet" />
-          <EntitySet Name="courseSet" EntityType="Self.courseSet" />
-          <EntitySet Name="folderSet" EntityType="Self.folderSet" />
-          <EntitySet Name="newsSet" EntityType="Self.newsSet" />
-        </EntityContainer>
-      </Schema>
+        <EntityType Name="studentSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="course" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="desc" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="imgPath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="createTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="dictSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="balanceImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="key" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="BcuModelStoreContainer" CdmEntityContainer="BcuEntities">
+          <EntitySetMapping Name="activitySet">
+            <EntityTypeMapping TypeName="BcuModel.activitySet">
+              <MappingFragment StoreEntitySet="activitySet">
+                <ScalarProperty Name="imgPath" ColumnName="imgPath" />
+                <ScalarProperty Name="eTime" ColumnName="eTime" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="bTime" ColumnName="bTime" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="attachmentSet">
             <EntityTypeMapping TypeName="BcuModel.attachmentSet">
               <MappingFragment StoreEntitySet="attachmentSet">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="fid" ColumnName="fid" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="path" ColumnName="path" />
-                <ScalarProperty Name="createTime" ColumnName="createTime" />
                 <ScalarProperty Name="extension" ColumnName="extension" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="collegeSet">
             <EntityTypeMapping TypeName="BcuModel.collegeSet">
               <MappingFragment StoreEntitySet="collegeSet">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="desc" ColumnName="desc" />
-                <ScalarProperty Name="creatTime" ColumnName="creatTime" />
-                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="img" ColumnName="img" />
                 <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="desc" ColumnName="desc" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="contactSet">
             <EntityTypeMapping TypeName="BcuModel.contactSet">
               <MappingFragment StoreEntitySet="contactSet">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
                 <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="cooperationSet">
             <EntityTypeMapping TypeName="BcuModel.cooperationSet">
               <MappingFragment StoreEntitySet="cooperationSet">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
                 <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="courseSet">
             <EntityTypeMapping TypeName="BcuModel.courseSet">
               <MappingFragment StoreEntitySet="courseSet">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="content" ColumnName="content" />
-                <ScalarProperty Name="introduction" ColumnName="introduction" />
-                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="release" ColumnName="release" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
                 <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="introduction" ColumnName="introduction" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="folderSet">
             <EntityTypeMapping TypeName="BcuModel.folderSet">
               <MappingFragment StoreEntitySet="folderSet">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
                 <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="jobSet">
+            <EntityTypeMapping TypeName="BcuModel.jobSet">
+              <MappingFragment StoreEntitySet="jobSet">
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="desc" ColumnName="desc" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="newsSet">
             <EntityTypeMapping TypeName="BcuModel.newsSet">
               <MappingFragment StoreEntitySet="newsSet">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="title" ColumnName="title" />
-                <ScalarProperty Name="content" ColumnName="content" />
-                <ScalarProperty Name="createTime" ColumnName="createTime" />
-                <ScalarProperty Name="img" ColumnName="img" />
                 <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="studentSet">
+            <EntityTypeMapping TypeName="BcuModel.studentSet">
+              <MappingFragment StoreEntitySet="studentSet">
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="imgPath" ColumnName="imgPath" />
+                <ScalarProperty Name="desc" ColumnName="desc" />
+                <ScalarProperty Name="course" ColumnName="course" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dictSet">
+            <EntityTypeMapping TypeName="BcuModel.dictSet">
+              <MappingFragment StoreEntitySet="dictSet">
+                <ScalarProperty Name="key" ColumnName="key" />
+                <ScalarProperty Name="balanceImg" ColumnName="balanceImg" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

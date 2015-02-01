@@ -40,26 +40,15 @@
                             <div class="ct-lists-prev lt"><</div>
                             <div class="ct-lists-ops lt">
                                 <ul class="ct-lists-ul">
-                                    <li class="">
-                                        <p class="p1 fz-14 m-b5">教学艺术作品展</p>
-                                        <img src="images/news-thumb-1.jpg">
-                                        <p class="p2">大学共有25,000多名在校学生大学共有25,000多名在校学生....</p>
-                                    </li>
-                                    <li class="">
-                                        <p class="p1 fz-14 m-b5">教学艺术作品展</p>
-                                        <img src="images/news-thumb-2.jpg">
-                                        <p class="p2">大学共有25,000多名在校学生大学共有25,000多名在校学生....</p>
-                                    </li>
-                                    <li class="">
-                                        <p class="p1 fz-14 m-b5">教学艺术作品展</p>
-                                        <img src="images/news-thumb-3.jpg">
-                                        <p class="p2">大学共有25,000多名在校学生大学共有25,000多名在校学生....</p>
-                                    </li>
-                                    <li class="">
-                                        <p class="p1 fz-14 m-b5">教学艺术作品展</p>
-                                        <img src="images/news-thumb-4.jpg">
-                                        <p class="p2">大学共有25,000多名在校学生大学共有25,000多名在校学生....</p>
-                                    </li>
+                                    <asp:Repeater ID="newsRpt" runat="server">
+                                        <ItemTemplate>
+                                            <li class="">
+                                                <p class="p1 fz-14 m-b5"><%# CutContent(Eval("title"),15) %></p>
+                                                <img src="<%# Eval("img") %>">
+                                                <p class="p2"><%# CutContent(Eval("content"),35) %></p>
+                                            </li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
                                 </ul>
                             </div>
                             <div class="ct-lists-next rt">></div>
@@ -71,26 +60,15 @@
                             <div class="ct-lists-prev lt"><</div>
                             <div class="ct-lists-ops lt">
                                 <ul class="ct-lists-ul">
-                                    <li class="">
-                                        <p class="p1 fz-14 m-b5">教学艺术作品展</p>
-                                        <img src="images/news-thumb-4.jpg">
-                                        <p class="p2">大学共有25,000多名在校学生大学共有25,000多名在校学生....</p>
-                                    </li>
-                                    <li class="">
-                                        <p class="p1 fz-14 m-b5">教学艺术作品展</p>
-                                        <img src="images/news-thumb-2.jpg">
-                                        <p class="p2">大学共有25,000多名在校学生大学共有25,000多名在校学生....</p>
-                                    </li>
-                                    <li class="">
-                                        <p class="p1 fz-14 m-b5">教学艺术作品展</p>
-                                        <img src="images/news-thumb-1.jpg">
-                                        <p class="p2">大学共有25,000多名在校学生大学共有25,000多名在校学生....</p>
-                                    </li>
-                                    <li class="">
-                                        <p class="p1 fz-14 m-b5">教学艺术作品展</p>
-                                        <img src="images/news-thumb-6.jpg">
-                                        <p class="p2">大学共有25,000多名在校学生大学共有25,000多名在校学生....</p>
-                                    </li>
+                                    <asp:Repeater ID="courseRpt" runat="server">
+                                        <ItemTemplate>
+                                            <li class="">
+                                                <p class="p1 fz-14 m-b5"><%# CutContent(Eval("name"),15) %></p>
+                                                <img src="<%# Eval("img") %>">
+                                                <p class="p2"><%# CutContent(Eval("content"),35) %></p>
+                                            </li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
                                 </ul>
                             </div>
                             <div class="ct-lists-next rt">></div>
@@ -102,26 +80,15 @@
                             <div class="ct-lists-prev lt"><</div>
                             <div class="ct-lists-ops lt">
                                 <ul class="ct-lists-ul">
-                                    <li class="">
-                                        <p class="p1 fz-14 m-b5">教学艺术作品展</p>
-                                        <img src="images/news-thumb-3.jpg">
-                                        <p class="p2">大学共有25,000多名在校学生大学共有25,000多名在校学生....</p>
-                                    </li>
-                                    <li class="">
-                                        <p class="p1 fz-14 m-b5">教学艺术作品展</p>
-                                        <img src="images/news-thumb-5.jpg">
-                                        <p class="p2">大学共有25,000多名在校学生大学共有25,000多名在校学生....</p>
-                                    </li>
-                                    <li class="">
-                                        <p class="p1 fz-14 m-b5">教学艺术作品展</p>
-                                        <img src="images/news-thumb-4.jpg">
-                                        <p class="p2">大学共有25,000多名在校学生大学共有25,000多名在校学生....</p>
-                                    </li>
-                                    <li class="">
-                                        <p class="p1 fz-14 m-b5">教学艺术作品展</p>
-                                        <img src="images/news-thumb-6.jpg">
-                                        <p class="p2">大学共有25,000多名在校学生大学共有25,000多名在校学生....</p>
-                                    </li>
+                                    <asp:Repeater ID="activityRpt" runat="server">
+                                        <ItemTemplate>
+                                            <li class="">
+                                                <p class="p1 fz-14 m-b5"><%# CutContent(Eval("title"),15) %></p>
+                                                <img src="<%# Eval("imgPath") %>">
+                                                <p class="p2"><%# CutContent(Eval("content"),35) %></p>
+                                            </li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
                                 </ul>
                             </div>
                             <div class="ct-lists-next rt">></div>

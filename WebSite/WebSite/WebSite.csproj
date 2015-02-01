@@ -143,6 +143,7 @@
     <Content Include="Admin\ajax\notify\notifications.html" />
     <Content Include="Admin\ajax\notify\tasks.html" />
     <Content Include="Admin\ajax\website-template.html" />
+    <Content Include="Admin\contact.html" />
     <Content Include="Admin\css\bootstrap.css" />
     <Content Include="Admin\css\bootstrap.min.css" />
     <Content Include="Admin\css\demo.css" />
@@ -316,7 +317,7 @@
     <Content Include="Admin\img\superbox\superbox-thumb-7.jpg" />
     <Content Include="Admin\img\superbox\superbox-thumb-8.jpg" />
     <Content Include="Admin\img\superbox\superbox-thumb-9.jpg" />
-    <Content Include="Admin\index.html" />
+    <Content Include="Admin\page\index.aspx" />
     <Content Include="Admin\js\app.js" />
     <Content Include="Admin\js\bootstrap\bootstrap.js" />
     <Content Include="Admin\js\bootstrap\bootstrap.min.js" />
@@ -797,7 +798,28 @@
     <Content Include="Admin\js\smartwidgets\jarvis.widget.js" />
     <Content Include="Admin\js\smartwidgets\jarvis.widget.min.js" />
     <Content Include="Admin\login.html" />
-    <Content Include="Admin\page\contact.html" />
+    <Content Include="Admin\page\activity.aspx" />
+    <Content Include="Admin\page\attachment.aspx" />
+    <Content Include="Admin\page\college.aspx" />
+    <Content Include="Admin\page\cptcollege.aspx" />
+    <Content Include="Admin\page\dmaster.aspx" />
+    <Content Include="Admin\page\exchange.aspx" />
+    <Content Include="Admin\page\foundationpro.aspx" />
+    <Content Include="Admin\page\sumschool.aspx" />
+    <Content Include="Admin\page\course.aspx" />
+    <Content Include="Admin\page\dbcldge.aspx" />
+    <Content Include="Admin\page\faculty.aspx" />
+    <Content Include="Admin\page\folder.aspx" />
+    <Content Include="Admin\page\hndcourse.aspx" />
+    <Content Include="Admin\page\hndguid.aspx" />
+    <Content Include="Admin\page\hndrequire.aspx" />
+    <Content Include="Admin\page\job.aspx" />
+    <Content Include="Admin\page\onlineMsg.aspx" />
+    <Content Include="Admin\page\require.aspx" />
+    <Content Include="Admin\page\schoolstay.aspx" />
+    <Content Include="Admin\page\service.aspx" />
+    <Content Include="Admin\page\student.aspx" />
+    <Content Include="Admin\page\university.aspx" />
     <Content Include="Admin\sound\bigbox.mp3" />
     <Content Include="Admin\sound\messagebox.mp3" />
     <Content Include="Admin\sound\smallbox.mp3" />
@@ -918,9 +940,6 @@
     <Content Include="Admin\js\plugin\datatables\media\images\psd\printer.psd" />
     <Content Include="Admin\js\plugin\datatables\media\js\TableTools.min.js.gz" />
     <Content Include="Admin\js\plugin\slickgrid\slick.editors.js--" />
-    <Content Include="Admin\php\demo-comment.php" />
-    <Content Include="Admin\php\demo-contacts.php" />
-    <Content Include="Admin\php\demo-register.php" />
     <Content Include="Admin\sound\bigbox.ogg" />
     <Content Include="Admin\sound\messagebox.ogg" />
     <Content Include="Admin\sound\smallbox.ogg" />
@@ -934,6 +953,8 @@
     <Content Include="DataProvider\Job.ashx" />
     <Content Include="DataProvider\News.ashx" />
     <Content Include="DataProvider\Student.ashx" />
+    <Content Include="DataProvider\Dict.ashx" />
+    <Content Include="Admin\adminSite.Master" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="page\about\college.aspx" />
     <Content Include="page\about\colleges.aspx" />
@@ -960,6 +981,39 @@
     <Content Include="page\live\service.aspx" />
     <Content Include="page\live\stay.aspx" />
     <Content Include="page\live\student.aspx" />
+    <Content Include="resource\activity\1.jpg" />
+    <Content Include="resource\activity\10.jpg" />
+    <Content Include="resource\activity\11.jpg" />
+    <Content Include="resource\activity\12.jpg" />
+    <Content Include="resource\activity\2.jpg" />
+    <Content Include="resource\activity\3.jpg" />
+    <Content Include="resource\activity\4.jpg" />
+    <Content Include="resource\activity\5.jpg" />
+    <Content Include="resource\activity\6.jpg" />
+    <Content Include="resource\activity\7.jpg" />
+    <Content Include="resource\activity\8.jpg" />
+    <Content Include="resource\activity\9.jpg" />
+    <Content Include="resource\course\a24.gif" />
+    <Content Include="resource\course\a25.gif" />
+    <Content Include="resource\course\a26.gif" />
+    <Content Include="resource\course\a27.gif" />
+    <Content Include="resource\course\a28.gif" />
+    <Content Include="resource\course\a29.gif" />
+    <Content Include="resource\new\img1.jpg" />
+    <Content Include="resource\new\img10.jpg" />
+    <Content Include="resource\new\img11.jpg" />
+    <Content Include="resource\new\img12.jpg" />
+    <Content Include="resource\new\img13.jpg" />
+    <Content Include="resource\new\img14.jpg" />
+    <Content Include="resource\new\img15.jpg" />
+    <Content Include="resource\new\img2.jpg" />
+    <Content Include="resource\new\img3.jpg" />
+    <Content Include="resource\new\img4.jpg" />
+    <Content Include="resource\new\img5.jpg" />
+    <Content Include="resource\new\img6.jpg" />
+    <Content Include="resource\new\img7.jpg" />
+    <Content Include="resource\new\img8.jpg" />
+    <Content Include="resource\new\img9.jpg" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
@@ -987,7 +1041,9 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1001,6 +1057,174 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\adminSite.Master.cs">
+      <DependentUpon>adminSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\adminSite.Master.designer.cs">
+      <DependentUpon>adminSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\activity.aspx.cs">
+      <DependentUpon>activity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\activity.aspx.designer.cs">
+      <DependentUpon>activity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\attachment.aspx.cs">
+      <DependentUpon>attachment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\attachment.aspx.designer.cs">
+      <DependentUpon>attachment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\college.aspx.cs">
+      <DependentUpon>college.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\college.aspx.designer.cs">
+      <DependentUpon>college.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\cptcollege.aspx.cs">
+      <DependentUpon>cptcollege.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\cptcollege.aspx.designer.cs">
+      <DependentUpon>cptcollege.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\dmaster.aspx.cs">
+      <DependentUpon>dmaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\dmaster.aspx.designer.cs">
+      <DependentUpon>dmaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\exchange.aspx.cs">
+      <DependentUpon>exchange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\exchange.aspx.designer.cs">
+      <DependentUpon>exchange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\foundationpro.aspx.cs">
+      <DependentUpon>foundationpro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\foundationpro.aspx.designer.cs">
+      <DependentUpon>foundationpro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\sumschool.aspx.cs">
+      <DependentUpon>sumschool.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\sumschool.aspx.designer.cs">
+      <DependentUpon>sumschool.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\course.aspx.cs">
+      <DependentUpon>course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\course.aspx.designer.cs">
+      <DependentUpon>course.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\dbcldge.aspx.cs">
+      <DependentUpon>dbcldge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\dbcldge.aspx.designer.cs">
+      <DependentUpon>dbcldge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\faculty.aspx.cs">
+      <DependentUpon>faculty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\faculty.aspx.designer.cs">
+      <DependentUpon>faculty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\folder.aspx.cs">
+      <DependentUpon>folder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\folder.aspx.designer.cs">
+      <DependentUpon>folder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\hndcourse.aspx.cs">
+      <DependentUpon>hndcourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\hndcourse.aspx.designer.cs">
+      <DependentUpon>hndcourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\hndguid.aspx.cs">
+      <DependentUpon>hndguid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\hndguid.aspx.designer.cs">
+      <DependentUpon>hndguid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\hndrequire.aspx.cs">
+      <DependentUpon>hndrequire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\hndrequire.aspx.designer.cs">
+      <DependentUpon>hndrequire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\job.aspx.cs">
+      <DependentUpon>job.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\job.aspx.designer.cs">
+      <DependentUpon>job.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\onlineMsg.aspx.cs">
+      <DependentUpon>onlineMsg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\onlineMsg.aspx.designer.cs">
+      <DependentUpon>onlineMsg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\require.aspx.cs">
+      <DependentUpon>require.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\require.aspx.designer.cs">
+      <DependentUpon>require.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\schoolstay.aspx.cs">
+      <DependentUpon>schoolstay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\schoolstay.aspx.designer.cs">
+      <DependentUpon>schoolstay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\service.aspx.cs">
+      <DependentUpon>service.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\service.aspx.designer.cs">
+      <DependentUpon>service.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\student.aspx.cs">
+      <DependentUpon>student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\student.aspx.designer.cs">
+      <DependentUpon>student.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\university.aspx.cs">
+      <DependentUpon>university.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\university.aspx.designer.cs">
+      <DependentUpon>university.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -1028,6 +1252,9 @@
     </Compile>
     <Compile Include="DataProvider\Course.ashx.cs">
       <DependentUpon>Course.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="DataProvider\Dict.ashx.cs">
+      <DependentUpon>Dict.ashx</DependentUpon>
     </Compile>
     <Compile Include="DataProvider\Folder.ashx.cs">
       <DependentUpon>Folder.ashx</DependentUpon>

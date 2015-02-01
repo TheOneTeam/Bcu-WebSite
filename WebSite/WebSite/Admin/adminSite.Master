@@ -1,0 +1,439 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="adminSite.master.cs" Inherits="WebSite.Admin.adminSite" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+		<meta charset="utf-8">
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+
+		<title> Bcu后台管理中心 </title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+
+		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.css">
+
+		<!-- SmartAdmin RTL Support is under construction
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.css"> -->
+
+		<!-- We recommend you use "your_style.css" to override SmartAdmin
+		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.css">
+
+		<!-- FAVICONS -->
+		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+
+		<!-- GOOGLE FONT -->
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+        <style type="text/css">
+            .bcu-logo {
+                background-size: contain;
+                background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjMsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTEwcHgiIGhlaWdodD0iMTEwcHgiIHZpZXdCb3g9IjAgMCAxMTAgMTEwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMTAgMTEwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik00MS43NTgsNC44NDdjMCwwLTAuNDgxLDEuNzIzLTMuMDEyLDEuNjAzYzAsMi4zMzYsMCwzLjIsMCwzLjJzMi41MzEsMC4yNDQsMy4zNzUtMS4zNTUNCglDNDIuOTYzLDYuNjk2LDQxLjc1OCw0Ljg0Nyw0MS43NTgsNC44NDd6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjkuMTMxLDE3LjY2NWMwLDAtMS4yOTUtMS42MDItMi45OTUtMC45NzZjLTEuNjk4LDAuNjI1LTEuNjMxLDEuMzIxLTIuNDUsMS41MzENCgljLTAuODE2LDAuMjA4LTIuMTc3LDAuMDY5LTIuNDU0LTAuMzQ3YzAsMCwxLjk3NywyLjI5NywzLjg4MywxLjExM0MyNy4wMjEsMTcuOCwyNy4yOTgsMTYuODk2LDI5LjEzMSwxNy42NjV6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMzEuODEzLDQ2LjI2OGMwLDAsMi4zNTIsMi43MDksMy41NzUsMy41MjdjMCwwLDEuMjI5LDIuNjMyLDEuMTgxLDQuMDgzDQoJYy0wLjA0NiwxLjQ1My0wLjEzNywyLjgxNi0xLjQwNyw1LjE3NGMtMS4yNzEsMi4zNTQtMS45MzUsMi40MjYtMS45MzUsMi40MjZzLTAuODk3LTAuNjUtMS45MjItMC41MjFjMCwwLDMuMDg1LTEuODIsMi42My00Ljg5OQ0KCWMtMC40NTMtMy4wODktMS41ODktMi45MDQtMi4xNzQtNS44OTlDMzEuMTY2LDQ3LjE2MywzMS4zNjIsNDcuNTA4LDMxLjgxMyw0Ni4yNjh6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjkuNTExLDYyLjEzNmMwLDAtNS4yMTMsMC4yMzEtNS4yNTYsNC4wODNjMCwwLDEuMzk5LDAuMTg1LDQuMDMzLDAuMTg1DQoJQzI4LjI4OCw2Ni40MDMsMjYuODgxLDY0LjAzOCwyOS41MTEsNjIuMTM2eiIvPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTY3LjA5NCw0OC40MzljLTAuNTQ3LTAuNjE2LTEuMTE3LTEuMjQ4LTEuNzc4LTEuODcyYy0yLjU4Ny0yLjQzOS00LjU1My0zLjAwNi04Ljc3NS0yLjUyNg0KCWMtMi42MDIsMC4yOTUtNC4zOTgsMS4wOTUtNS45OTEsMS44MDNjLTAuODM3LDAuMzc0LTEuNjI3LDAuNzI1LTIuNDQxLDAuOTYxYy0xLjkzOSwwLjU1NC0yLjgwNC0wLjY5MS0zLjI5NS0xLjM4Mg0KCWMtMC4wNTEsMC4wMTEtMC40NTYsMC4wMDUtMC41MDIsMC4wMTRjMCwwLTEuMDIzLDAuNDUyLTAuNTM3LDAuOTQ4YzAuNDg2LDAuNTAzLDIuMTY4LDIuNzkzLDYuMjIyLDIuMjM1DQoJYzIuMjc0LTAuMzEyLDEwLjY1LTEuNjA0LDEwLjY1LTEuNjA0cy0zLjcyMSwxLjM5LTIuMjE2LDUuNTQ5YzAuNDY5LDEuMjg3LDMuMDg3LDIuNTAxLDQuMTE5LDQuMDAyDQoJYzEuMDQ1LDEuNTA1LDAuODIxLDMuNTA3LDAuMjE2LDQuMzY4Yy0wLjU5OCwwLjg2Mi0yLjQxNCwxLjQzMi0yLjQxNCwxLjQzMnMtMi40MDEtMS4wNjctNC4wOTEsMC45MDkNCgljLTEuNjg2LDEuOTY5LTAuNzIzLDMuMDc3LDAsMy4wNzdjMC43MjEsMCw1LjMwNy0wLjEyNSw2LjI2Ny0wLjEyNWMwLjk2MywwLDEuNTY3LTAuNDg3LDIuMDUxLTEuMTA4DQoJYzAuNDc3LTAuNjE2LDAuNzIyLTIuODMyLDAuNzIyLTIuODMyczEuMzIxLDAuNjE2LDEuMzIxLDEuMzUzYzAuMzY0LTEuMTA0LDAuMTIzLTEuNDc4LDAtMi41ODINCgljLTAuMTE4LTEuMTExLDAuMjM5LTIuMjE2LDAuODQ4LTIuODMyYzAuNTk4LTAuNjE2LDEuODA3LTAuNzM4LDIuMTctMS40NzhjMC4zNTgtMC43MzgtMC4yNDUtMC42MTUtMC42MDQtMC44NjINCgljLTAuMzY0LTAuMjQ2LTEuMi0wLjk4NC0wLjg0Ni0xLjZjMC4zNjItMC42MTcsMS43MTMtMS4wNzMsMS44MzItMS45MzVjMC4wNDctMC4zNTIsMC4xNjItMC40MzgsMC4yNzMtMC44ODMNCglDNjguOTUzLDUwLjUwNiw2OC4wMTMsNDkuNDYyLDY3LjA5NCw0OC40Mzl6IE04Ni41LDU0LjUzMmMwLjEyMS0wLjYxNiwxLjk2Ni0xLjI1NSwxLjk2Ni0xLjI1NXMtMC41ODktMS43NDctMS4xOTEtMi4yMzkNCgljLTAuNjAzLTAuNDk1LTEuNzM4LTAuMDc3LTIuNDYtMC44MTRjLTAuNzIzLTAuNzM5LTMuMzctMS45NzItMy43MzQtOC4yNTRjLTAuMzU4LTYuMjgtMC4xOS01Ljk5NS0wLjE5LTUuOTk1DQoJczYuNDU2LTMuNzM1LDYuMjE2LTExLjI0NWMtMC4yNDMtNy41MTYtOS4yNzQtNi44OTgtMTIuNDEyLTQuNjgyYy0zLjEyOSwyLjIxNy0xMC43MjMsNi4xNTgtMTMuMjUyLTAuODYzDQoJYy0wLjg0NC0yLjA5MiwzLjEzNi0zLjIwMiwzLjEzNi0zLjIwMnMyLjE2NiwwLjEyMywzLjM3Mi0wLjk4MmMxLjIwNS0xLjExMywwLjQ4MS0xLjM1NywxLjQ0My0xLjcyNw0KCWMwLjk2NS0wLjM2OSwxLjkzMS0wLjEyNSwzLjEzNS0xLjM1M2MxLjIwNi0xLjIzNiwxLjU2NC0zLjU3MywxLjU2NC0zLjU3M3MtMS4wODQsMS44NDctMi41MjcsMS43MjINCgljLTEuNDQ3LTAuMTItMy43My0xLjQ3OC01LjQyNC0wLjk4M2MtMS42ODYsMC40OTItMi4yODksMS4xMDgtMy4wMSwyLjM0Yy0wLjcyMywxLjIzMy0wLjYwNCwxLjYwMi0xLjQ1MSwyLjIxNg0KCWMtMC44NDIsMC42MTgtNi4wMjIsNy43NjIsMi40MTQsMTEuNDU1YzUuNTQ0LDEuNzIyLDEwLjI0MS0yLjA5MywxMS40NDUtMi44MzNjMS4yMDYtMC43MzksMi40MDYtMS40NzgsNC43MDMtMS40NzgNCgljMi4yOCwwLDQuNjk3LDEuNTk5LDQuODE0LDMuODE4YzAuMTE4LDIuMjE0LTEuNDQ3LDUuMDQ5LTQuOTQzLDUuNzg5Yy0wLjcyMSwwLTEuOTIxLDAuMzY3LTEuOTIxLDAuMzY3cy0yLjA0Ny0yLjcwOC0xMC45NjctMC43MzcNCgljLTguOTE1LDEuOTctMTcuOTUsMy4yMDMtMjAuMjQyLTMuODE4Yy0wLjYwMy02LjI4MSw0LjA1LDAuNjc3LDQuMDUsMC42NzdzLTAuMTQyLTYuMjE5LTIuMTIxLTYuMjE5DQoJYy0xLjEwOCwwLTIuNDEzLTAuOTg1LTIuNDEzLTAuOTg1czAuMjQzLTEuMjM0LDAuODQ5LTEuMjM0YzAuNTk5LDAsMi4xNTUsMS43NDMsMi4xNTUsMS43NDNzMC40NzQtNC43MjUtMS4zMzQtNS44MzMNCgljLTAuOTc4LTAuNTk5LTEuNDE5LTEuMjYzLTEuNjIyLTEuNzQ3YzAuNjc2LTAuMDk5LDEuNDY4LTAuMzIzLDIuMDA1LTAuODE0YzEuMjA3LTEuMTA5LDEuODA2LTIuMzM5LDEuOTI3LTMuNjk0DQoJYzAuMTItMS4zNTMtMC4zNi0wLjYxNC0xLjIwNC0wLjEyM2MtMC44NDMsMC40OTQtMi40MTMsMC43MzktMy42MTQsMC43MzljLTEuMjA4LDAtMi41MzQtMC40OTItMi41MzQtMC40OTINCglzLTAuODQxLDEuMTA5LTEuODA3LDEuMzU0Yy0wLjk2MywwLjI0Ny0zLjI1NSwwLjEyNC00LjkzOSwwYy0xLjY4Ny0wLjEyNC0yLjY1NC0wLjk4Ni0zLjg1NC0wLjYxNg0KCWMtMS4yMDYsMC4zNzEtMS41NywxLjIzMy0zLjEzMywxLjYwMmMtMS41NjcsMC4zNzEtMi4xNzEsMC0zLjI1My0wLjEyNWMtMS4wODYtMC4xMjItMi40MTEtMC4xMjItMi42NSwwLjczOQ0KCWMtMC4yNDYsMC44NjItMC42MDQsMS45Ny0wLjI0NiwzLjA4MmMwLjM2LDEuMTA3LDAuNjAzLDEuNDc3LDIuNDE0LDEuMzUyYzEuODA0LTAuMTIsMy44NTIsMCw0LjY5NywxLjEwOA0KCWMwLjg0MiwxLjExMSwwLjg0MiwyLjM0MSwwLjYwMSwzLjA3OWMtMC4yMzksMC43NDItMS44MDYsMC40NjEtMi42NTEsMC4zMzdjLTAuODQzLTAuMTI1LTIuMDQzLTAuNjE2LTIuNTI0LDAuMjQ3DQoJYy0wLjQ4NywwLjg1OC0wLjk2NSwzLjU3MSwwLjcxOSwyLjk1NWMxLjY4Ni0wLjYxNiw2LjAyNi0wLjMzMyw2LjYyNS0wLjMzM2MwLjYsMCwwLjYsMCwwLjYsMHMtNi4xNDIsNC41ODUtNi4wMjUsMTAuMzc0DQoJYzAsOC43NDUsNy43MTQsMTQuMzgzLDcuNzE0LDE0LjM4M3MtMS4zMjQtNC4wNjQtMS4wODMtNy42MzhjMC4yNDItMy41NzIsMS45MjctNS4xNzEsMS45MjctNS4xNzFzLTEuMzIyLDQuMDYzLTAuMTE5LDkuNDgyDQoJYzEuMjAzLDUuNDIxLDIuNjU0LDkuODU0LDEuMjAzLDEzLjNjLTEuNDQzLDMuNDQ4LTIuNjI3LDQuNzc0LTMuNDczLDQuNzc0Yy0wLjg0NiwwLTIuMTg3LTAuNTg4LTIuOTE0LTAuMjINCgljLTAuNzE5LDAuMzczLTEuNDQ2LDEuMzUzLTEuNDQ2LDIuMjE2YzAsMC44NjEtMC4yNDIsMS45NzUsMC43MjgsMS45NzVjMC45NiwwLDMuMzcyLTAuMTI1LDQuNTc2LTAuMTI1DQoJYzEuMjAyLDAsMi4yODktMC4yNDcsMy4xMzItMC44NjFjMC44NDgtMC42MTYsMS4yMDYtMy4zMjksMS4yMDYtMy4zMjlzMC45NjMsMC4yNSwwLjk2MywwLjg2MWwwLjQ4NC0xLjU5OA0KCWMtMC4yNDQtMC44NTktMC4xMjMtMS4yMzMsMC42LTIuNTg0YzAuNzI0LTEuMzU0LDAuODM5LTEuMzU0LDEuOTI2LTIuNDYyYzEuMDg3LTEuMTEtMC43MjQtMC44NjQtMC43MjQtMi4yMTgNCglzMC40ODUtMS44NDUsMS4wODUtMy4yMDFjMC42MDUtMS4zNTYtMC4xMi0xLjEwNi0wLjYtMS40NzdjLTAuNDg1LTAuMzcsMC4yODEtMC42MTIsMC4zNjMtMS40ODENCgljMC4xNDgtMS42MTgtMS44MjctMi43NjMtMS44MjctMi43NjNjNC4yMjMtMC42OTYsNC40ODctMi4yMjcsNC40ODctMi4yMjdjLTUuMzgxLTEuNDQyLTUuMTQ5LTUuNzY0LTUuMTQ5LTUuNzY0DQoJYzUuMzA5LDAuNDE2LDYuODE1LTIuMjIzLDYuODE1LTIuMjIzYy0yLjg2NCwwLjU1NC00LjE3NC0yLjY3LTQuMTc0LTIuNjdjMC44MTYtMC44MzUsMC40NTctMy4yMjUsMC40NTctMy4yMjUNCgljLTEuOTA3LTQuMDM4LTUuOTAzLTEuMjI4LTUuOTAzLTEuMjI4YzEuMDktMi41MDcsNS4zMTItMi4zNjcsNi42NzMsMC4yNzVjMS4zNjEsMi42NDYsMC4yNTQsMy45NjUsMC4yNTQsMy45NjUNCgljMS4zNTksMi41MDUsNC42NDcsMS44ODMsNC42NDcsMS44ODNjLTIuNzI0LDUuNDI4LTcuMDgzLDQuNDAyLTcuMDgzLDQuNDAyYzEuMzYzLDMuODk1LDQuOTA2LDMuMjUxLDQuOTA2LDMuMjUxDQoJYy0wLjA2OCwyLjA3NS0wLjc2NSwyLjkzMi0xLjU1LDMuMzM1YzAuMzYzLDAuMjU1LDAuOTg0LDAuNDczLDEuOTczLDAuMTljMC43MjktMC4yMTIsMS40ODctMC41NDYsMi4yODUtMC45MDMNCgljMS42NjgtMC43NDUsMy41Ni0xLjU4NSw2LjM0My0xLjljMy4xOTYtMC4zNjMsNS4yNzMtMC4xNSw3LjIwOCwwLjkyNmMwLjEyNy0wLjM5NywwLjM1Ni0xLjA0MiwwLjAyNy0xLjY5Ng0KCWMtMC4yNDMtMC40ODctMC40NTEtMS4wMjEsMC4wOTItMC43NDFsMC40NDMsMC40OGMwLDAsMS4yNTgsMS43MDIsMS41MjYsMy40NzljMC4xNDksMC4xMzEsMC4yOTUsMC4yNjQsMC40NDMsMC40MDUNCgljMC42OTUsMC42NTUsMS4yODMsMS4zMSwxLjg1MywxLjk0NGMxLjAzNywxLjE1MywyLjAyNSwyLjI1NCwzLjU2NSwzLjIzNWMwLjQ1NCwwLjI3MSwxLjA3NSwwLjYxOSwxLjg4MiwxLjAzNA0KCWMxLjkyOSwwLjk4Nyw0Ljg2NywwLjQ3NSw2LjQzMiwxLjIxNWMxLjU2NiwwLjczOSwyLjg4OCwzLjA4MiwzLjYxLDQuODAzYzAuNzIzLDEuNzI1LDAuNzIzLDMuMiwwLjI0Myw0LjE4Ng0KCWMtMC40ODEsMC45ODctMC43MjUsMS42MDMtMS4zMjUsMS42MDNjLTAuNjA1LDAtMC45NjItMC40OTMtMS45MjktMC40OTNjLTAuOTU2LDAtMS40NDUsMC40OTMtMS44MDMsMS4zNTQNCgljLTAuMzYxLDAuODU5LTAuMzYxLDIuNDYzLDAuMTE4LDIuNDYzYzAuNDgsMCw2LjAyMS0wLjQ5NCw2Ljc0My0wLjQ5NGMwLjcyNCwwLDEuMjA3LTAuODYxLDEuMzI2LTEuNzI3DQoJYzAuMTI3LTAuODU3LDAtMS45NjcsMC0yLjU4MmMwLTAuNjE2LDEuMjA4LDAuMzY1LDEuMjA4LDAuMzY1czAuMjM4LTEuNTk2LTAuMzYyLTMuMzJDODcuMTA1LDU3LjExOCw4Ni4zOCw1NS4xNDksODYuNSw1NC41MzJ6DQoJIE0zNy41NDIsMTQuMTgxYy0xLjA4MiwwLjEyNC0xLjgwNywwLjM2OS0yLjI4OC0wLjEyNGMtMC40ODItMC40OTYtMC42MDEtMC44NjItMS4yMDYtMC44NjJjLTAuNjA0LDAtMS4yMDQtMC4xMjQtMS4yMDQtMC4xMjQNCglzMC4yNDMtMC4yNDQsMS4zMjctMC43MzhjMCwwLDIuNDA5LDAuMjQ1LDMuMzcyLDAuMzdjMC45NjIsMC4xMjQsMS4zMjYsMC4yNDMsMS4zMjYsMC4yNDNTMzguNjI2LDE0LjA1OCwzNy41NDIsMTQuMTgxeiIvPg0KPGc+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTcuMDQ0LDg1LjUxOWMwLDAuNDQtMC4wNzMsMC44My0wLjIxNywxLjE2OGMtMC4xNDQsMC4zMzYtMC4zNDQsMC42Mi0wLjYsMC44NQ0KCQljLTAuMjU3LDAuMjI5LTAuNTYzLDAuNDA0LTAuOTE5LDAuNTIxYy0wLjM1NSwwLjExNi0wLjc0NSwwLjE3NC0xLjE2OCwwLjE3NEgwLjI1di05LjYxNmgzLjc0MWMwLjkwMSwwLDEuNjA5LDAuMjMzLDIuMTI4LDAuNzAzDQoJCWMwLjUxNywwLjQ2OCwwLjc3NiwxLjExMSwwLjc3NiwxLjkzMmMwLDAuMjYxLTAuMDM5LDAuNTAyLTAuMTE1LDAuNzIyYy0wLjA3NywwLjIyMi0wLjE3NiwwLjQxOC0wLjI5NywwLjU5NQ0KCQljLTAuMTIyLDAuMTc2LTAuMjU4LDAuMzI0LTAuNDEyLDAuNDQ1Yy0wLjE1MywwLjEyMy0wLjMxLDAuMjE0LTAuNDczLDAuMjc3YzAuMTg5LDAuMDczLDAuMzcsMC4xNzQsMC41NDEsMC4zMDUNCgkJYzAuMTcxLDAuMTI5LDAuMzI0LDAuMjg1LDAuNDU5LDAuNDY2YzAuMTM1LDAuMTgsMC4yNDMsMC4zOTIsMC4zMjUsMC42MzRDNy4wMDMsODQuOTM3LDcuMDQ0LDg1LjIxLDcuMDQ0LDg1LjUxOXogTTUuNDM2LDgxLjMwMw0KCQljMC0wLjQ0OS0wLjE0NC0wLjc5Mi0wLjQzMS0xLjAyNmMtMC4yODktMC4yMzMtMC42NjctMC4zNTEtMS4xMzUtMC4zNTFIMS43MDh2Mi43NTVoMi4xNjFjMC40NjgsMCwwLjg0Ny0wLjExNiwxLjEzNS0wLjM1Mg0KCQlDNS4yOTIsODIuMDk3LDUuNDM2LDgxLjc1NCw1LjQzNiw4MS4zMDN6IE01LjU4NSw4NS40NDljMC0wLjQzMi0wLjEzNS0wLjc4Mi0wLjQwNi0xLjA1NGMtMC4yNy0wLjI3LTAuNjYyLTAuNDAzLTEuMTc1LTAuNDAzDQoJCUgxLjcwOHYyLjkyOWgyLjI5NmMwLjUxNCwwLDAuOTA1LTAuMTM1LDEuMTc1LTAuNDEyQzUuNDUsODYuMjM1LDUuNTg1LDg1Ljg4MSw1LjU4NSw4NS40NDl6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTguOTM1LDg4LjIzMXYtOS42MTZoMS40NTh2OS42MTZIOC45MzV6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTE3Ljk0Myw4OC4yMzFsLTIuMDI1LTQuMDUyaC0xLjgyNHY0LjA1MmgtMS40NTh2LTkuNjE2aDMuNzI3YzAuNDU5LDAsMC44NzIsMC4wNywxLjIzNiwwLjIwOA0KCQljMC4zNjUsMC4xNDEsMC42NzgsMC4zMzUsMC45MzksMC41ODJjMC4yNiwwLjI0OCwwLjQ2MSwwLjU0NSwwLjYwMSwwLjg5MmMwLjEzOSwwLjM0NywwLjIwOSwwLjcyMywwLjIwOSwxLjEyOQ0KCQljMCwwLjY5My0wLjE4NSwxLjI1My0wLjU1NSwxLjY4MWMtMC4zNjgsMC40MjgtMC44MjMsMC43MTgtMS4zNjMsMC44NzFsMi4yMTUsNC4yNTRIMTcuOTQzeiBNMTcuODksODEuNDM5DQoJCWMwLTAuNDc5LTAuMTUxLTAuODUtMC40NTMtMS4xMTVzLTAuNjk1LTAuMzk4LTEuMTgyLTAuMzk4aC0yLjE2MnYzLjAxM2gyLjE2MmMwLjQ4NywwLDAuODgxLTAuMTMxLDEuMTgyLTAuMzk0DQoJCUMxNy43MzgsODIuMjg1LDE3Ljg5LDgxLjkxNSwxNy44OSw4MS40Mzl6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTI4LjIzNiw4OC4yMzF2LTYuNDNsLTIuMjE2LDQuNjg4aC0xLjA4MWwtMi4yNjktNC42ODh2Ni40M2gtMS40NTh2LTkuNjE2aDEuNDU4bDIuODA5LDUuOTgybDIuNzU2LTUuOTgyDQoJCWgxLjQ1OHY5LjYxNkgyOC4yMzZ6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTMxLjkyMyw4OC4yMzF2LTkuNjE2aDEuNDU4djkuNjE2SDMxLjkyM3oiLz4NCgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNNDEuNTI3LDg4LjIzMWwtNC40NDUtNi43NjZ2Ni43NjZoLTEuNDU4di05LjYxNmgxLjMzNmw0LjQ0NCw2Ljc1M3YtNi43NTNoMS40NTl2OS42MTZINDEuNTI3eiIvPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik01MS43MjQsODQuNTA1YzAsMC42Mi0wLjA2NSwxLjE0My0wLjE5NiwxLjU2NmMtMC4xMzEsMC40MjItMC4zNTQsMC44MDYtMC42NjksMS4xNDgNCgkJYy0wLjM2OSwwLjM4Ni0wLjc3MywwLjY2Ni0xLjIxNSwwLjgzOGMtMC40NDEsMC4xNy0wLjkxOCwwLjI1Ni0xLjQzMSwwLjI1NmMtMC41MDYsMC0wLjk2OS0wLjA4OC0xLjM5Mi0wLjI2NQ0KCQljLTAuNDIyLTAuMTc0LTAuODAxLTAuNDMtMS4xMzQtMC43NjJjLTAuMjM1LTAuMjM1LTAuNDE0LTAuNDgxLTAuNTQxLTAuNzQzYy0wLjEyNi0wLjI2My0wLjIyLTAuNTQ0LTAuMjc4LTAuODUyDQoJCWMtMC4wNTgtMC4zMDUtMC4wOTItMC42NDYtMC4xMDItMS4wMTljLTAuMDA5LTAuMzc1LTAuMDEzLTAuNzkxLTAuMDEzLTEuMjVzMC4wMDQtMC44NzUsMC4wMTMtMS4yNQ0KCQljMC4wMS0wLjM3NCwwLjA0My0wLjcxMywwLjEwMi0xLjAyczAuMTUyLTAuNTkxLDAuMjc4LTAuODUyYzAuMTI2LTAuMjYsMC4zMDYtMC41MDksMC41NDEtMC43NDINCgkJYzAuMzMzLTAuMzMzLDAuNzA4LTAuNTg3LDEuMTI3LTAuNzYzYzAuNDE4LTAuMTc3LDAuODg1LTAuMjY0LDEuMzk4LTAuMjY0YzAuNTEzLDAsMC45NywwLjA3OSwxLjM3LDAuMjM3DQoJCWMwLjQwMSwwLjE1NywwLjc0NywwLjM3MSwxLjA0MSwwLjY0MmMwLjI5MiwwLjI3LDAuNTI5LDAuNTg1LDAuNzEsMC45NDVjMC4xNzgsMC4zNTgsMC4zMDUsMC43NDYsMC4zNzcsMS4xNmgtMS40NzINCgkJYy0wLjEyNi0wLjUzMS0wLjM1OS0wLjk0Mi0wLjcwNC0xLjIzNGMtMC4zNC0wLjI5NC0wLjc4MS0wLjQzOS0xLjMyMi0wLjQzOWMtMC4yOSwwLTAuNTU1LDAuMDU0LTAuNzk3LDAuMTYxDQoJCWMtMC4yNDMsMC4xMDgtMC40NTEsMC4yNTMtMC42MjIsMC40MzRjLTAuMTE3LDAuMTI0LTAuMjE0LDAuMjYzLTAuMjksMC40MWMtMC4wNzYsMC4xNS0wLjEzNiwwLjMzNC0wLjE3NSwwLjU1NA0KCQljLTAuMDQxLDAuMjIyLTAuMDcsMC40OTItMC4wODksMC44MTFjLTAuMDE4LDAuMzIxLTAuMDI1LDAuNzI1LTAuMDI1LDEuMjFjMCwwLjQ4NiwwLjAwOCwwLjg5MSwwLjAyNSwxLjIxNg0KCQljMC4wMiwwLjMyNCwwLjA0OSwwLjU5NiwwLjA4OSwwLjgxNWMwLjAzOSwwLjIyMiwwLjA5OSwwLjQwNiwwLjE3NSwwLjU1NWMwLjA3NiwwLjE1LDAuMTczLDAuMjg1LDAuMjksMC40MTINCgkJYzAuMTcxLDAuMTgxLDAuMzc5LDAuMzIyLDAuNjIyLDAuNDI2YzAuMjQzLDAuMTAzLDAuNTA3LDAuMTU2LDAuNzk3LDAuMTU2YzAuMzE0LDAsMC42MDYtMC4wNiwwLjg3Ny0wLjE3Ng0KCQljMC4yNy0wLjExOSwwLjQ5OS0wLjI4NCwwLjY5LTAuNTAyYzAuMTc5LTAuMjA2LDAuMzA1LTAuNDMyLDAuMzc3LTAuNjc1YzAuMDcxLTAuMjQyLDAuMTA5LTAuNTIxLDAuMTA5LTAuODM2di0wLjU0aC0yLjA1M3YtMS4yNDQNCgkJaDMuNTExVjg0LjUwNXoiLz4NCgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNNTguOTY1LDg4LjIzMXYtNC4xOTloLTMuOTA0djQuMTk5aC0xLjQ1OHYtOS42MTZoMS40NTh2NC4xMDdoMy45MDR2LTQuMTA3aDEuNDU3djkuNjE2SDU4Ljk2NXoiLz4NCgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNNjguMTksODguMjMxbC0wLjY2My0xLjkzMWgtMy43OTZsLTAuNjYyLDEuOTMxaC0xLjU1M2wzLjUyNS05LjYxNmgxLjE3NGwzLjUyNyw5LjYxNkg2OC4xOXoNCgkJIE02NS42NjIsODAuNzlsLTEuNDk5LDQuMjY3aDIuOTZMNjUuNjYyLDgwLjc5eiIvPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik03Ny44Niw4OC4yMzF2LTYuNDNsLTIuMjE2LDQuNjg4aC0xLjA4bC0yLjI3MS00LjY4OHY2LjQzaC0xLjQ1OHYtOS42MTZoMS40NThsMi44MTIsNS45ODJsMi43NTUtNS45ODINCgkJaDEuNDU4djkuNjE2SDc3Ljg2eiIvPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik05MS4wNTcsODUuMzU0Yy0wLjA4MywwLjQ3OS0wLjIyNCwwLjkwMi0wLjQyNiwxLjI3MWMtMC4yMDIsMC4zNjgtMC40NTYsMC42NzktMC43NTcsMC45MzENCgkJYy0wLjMwMSwwLjI1My0wLjY0NCwwLjQ0MS0xLjAyNywwLjU2OGMtMC4zODMsMC4xMjQtMC43ODgsMC4xODgtMS4yMjIsMC4xODhjLTAuNTA1LDAtMC45NjktMC4wODgtMS4zOTEtMC4yNjUNCgkJYy0wLjQyNC0wLjE3NC0wLjgwMi0wLjQzLTEuMTM2LTAuNzYyYy0wLjIzMi0wLjIzNS0wLjQxNC0wLjQ4MS0wLjU0MS0wLjc0M2MtMC4xMjMtMC4yNjMtMC4yMTgtMC41NDQtMC4yNzUtMC44NTINCgkJYy0wLjA1OC0wLjMwNS0wLjA5NC0wLjY0Ni0wLjEwMi0xLjAxOWMtMC4wMS0wLjM3NS0wLjAxNC0wLjc5MS0wLjAxNC0xLjI1czAuMDA0LTAuODc1LDAuMDE0LTEuMjUNCgkJYzAuMDA4LTAuMzc0LDAuMDQ0LTAuNzEzLDAuMTAyLTEuMDJzMC4xNTItMC41OTEsMC4yNzUtMC44NTJjMC4xMjctMC4yNiwwLjMwOS0wLjUwOSwwLjU0MS0wLjc0Mg0KCQljMC4zMzQtMC4zMzMsMC43MTItMC41ODcsMS4xMzYtMC43NjNjMC40MjItMC4xNzcsMC44ODYtMC4yNjQsMS4zOTEtMC4yNjRjMC44OTIsMCwxLjY0NCwwLjI1MywyLjI1NywwLjc1Nw0KCQljMC42MTIsMC41MDMsMS4wMDMsMS4yMzcsMS4xNzUsMi4yaC0xLjQ4NWMtMC4xMTctMC40ODUtMC4zMzctMC44ODEtMC42NTUtMS4xODhjLTAuMzIxLTAuMzA1LTAuNzUxLTAuNDU4LTEuMjkxLTAuNDU4DQoJCWMtMC4yODksMC0wLjU1NSwwLjA1Mi0wLjc5NiwwLjE1NWMtMC4yNDUsMC4xMDMtMC40NTEsMC4yNDUtMC42MjIsMC40MjZjLTAuMTE3LDAuMTI2LTAuMjE0LDAuMjYzLTAuMjg5LDAuNDENCgkJYy0wLjA3OSwwLjE0OS0wLjEzNywwLjMzNC0wLjE3OCwwLjU1NGMtMC4wNCwwLjIyMi0wLjA3LDAuNDk1LTAuMDg4LDAuODE5Yy0wLjAxOCwwLjMyMi0wLjAyNywwLjcyOS0wLjAyNywxLjIxNQ0KCQljMCwwLjQ4NiwwLjAxLDAuODkxLDAuMDI3LDEuMjE2YzAuMDE4LDAuMzI0LDAuMDQ4LDAuNTk2LDAuMDg4LDAuODE1YzAuMDQxLDAuMjIyLDAuMDk5LDAuNDA2LDAuMTc4LDAuNTU1DQoJCWMwLjA3NSwwLjE1LDAuMTcyLDAuMjg1LDAuMjg5LDAuNDEyYzAuMTcxLDAuMTgxLDAuMzc3LDAuMzIyLDAuNjIyLDAuNDI2YzAuMjQxLDAuMTAzLDAuNTA3LDAuMTU2LDAuNzk2LDAuMTU2DQoJCWMwLjU0LDAsMC45NzQtMC4xNTQsMS4yOTctMC40NmMwLjMyNC0wLjMwNywwLjU0NC0wLjcwMywwLjY2Mi0xLjE4OUg5MS4wNTd6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTkyLjcyOSw4OC4yMzF2LTkuNjE2aDEuNDU4djkuNjE2SDkyLjcyOXoiLz4NCgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNOTkuNjg3LDc5LjkyNnY4LjMwNmgtMS40NTh2LTguMzA2SDk1LjU4di0xLjMxMWg2Ljc1NHYxLjMxMUg5OS42ODd6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTEwNi44NzMsODQuMjc1djMuOTU2aC0xLjQ1OXYtMy45NTZsLTIuODc4LTUuNjZoMS41OTVsMi4wMTMsNC4yMjhsMi4wMTMtNC4yMjhoMS41OTRMMTA2Ljg3Myw4NC4yNzV6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTMzLjQ0OSwxMDAuNDk4YzAsMC40OTYtMC4wODgsMC45NDktMC4yNjMsMS4zNTdjLTAuMTc2LDAuNDEtMC40MTksMC43NjEtMC43MjksMS4wNDgNCgkJYy0wLjMxMSwwLjI4Ny0wLjY3OCwwLjUxMy0xLjEwMiwwLjY3NWMtMC40MjMsMC4xNjMtMC44NzcsMC4yNDItMS4zNjQsMC4yNDJjLTAuNDg2LDAtMC45NDEtMC4wNzktMS4zNjUtMC4yNDINCgkJYy0wLjQyMy0wLjE2Mi0wLjc4Ny0wLjM4OC0xLjA5My0wLjY3NXMtMC41NDctMC42MzgtMC43MjMtMS4wNDhjLTAuMTc1LTAuNDA4LTAuMjYzLTAuODYxLTAuMjYzLTEuMzU3di02LjM3NWgxLjQ1OHY2LjMwNw0KCQljMCwwLjY0OSwwLjE4LDEuMTU5LDAuNTQxLDEuNTI3YzAuMzU5LDAuMzY4LDAuODQxLDAuNTU0LDEuNDQ1LDAuNTU0YzAuNjAzLDAsMS4wODctMC4xODYsMS40NTItMC41NTQNCgkJYzAuMzY1LTAuMzY4LDAuNTQ3LTAuODc4LDAuNTQ3LTEuNTI3di02LjMwN2gxLjQ1OFYxMDAuNDk4eiIvPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0zOS44MjUsMTAzLjc0MXYtNC4xNzVjMC0wLjUzLTAuMTMzLTAuOTE5LTAuMzk5LTEuMTYyYy0wLjI2Ni0wLjI0My0wLjU5MS0wLjM2NC0wLjk3OS0wLjM2NA0KCQljLTAuMzg3LDAtMC43MjEsMC4xMjUtMSwwLjM3MnMtMC40MTgsMC42MzItMC40MTgsMS4xNTR2NC4xNzVIMzUuNjV2LTYuODVoMS4zNTJ2MC42OWMwLjIzNC0wLjI2MywwLjUxLTAuNDU1LDAuODMtMC41ODINCgkJYzAuMzItMC4xMjYsMC42NTEtMC4xODgsMC45OTQtMC4xODhjMC4zNTEsMCwwLjY2NywwLjA1MywwLjk1MiwwLjE2MWMwLjI4NCwwLjEwNywwLjUyOSwwLjI2MSwwLjczNiwwLjQ1OQ0KCQljMC4yNjEsMC4yNjQsMC40NDEsMC41NTMsMC41NDEsMC44NzFjMC4wOTksMC4zMjEsMC4xNDgsMC42NzYsMC4xNDgsMS4wNjJ2NC4zNzdIMzkuODI1eiIvPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik00My4yODIsOTUuNTQxdi0xLjQ1OWgxLjQ1OHYxLjQ1OUg0My4yODJ6IE00My4zMjMsMTAzLjc0MXYtNi44NWgxLjM3OXY2Ljg1SDQzLjMyM3oiLz4NCgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNNDkuNTM1LDEwMy43NDFoLTEuMTJsLTIuNTEyLTYuODVoMS40NThsMS42MjIsNC44MjNsMS42MDYtNC44MjNoMS40NTlMNDkuNTM1LDEwMy43NDF6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTU0LjEyOSwxMDAuNzE0YzAsMC41OTUsMC4xNDgsMS4wNjMsMC40NDUsMS40MDVjMC4yOTcsMC4zNDMsMC43MjksMC41MTQsMS4yOTcsMC41MTQNCgkJYzAuMzg3LDAsMC42OTktMC4wNTcsMC45MzgtMC4xNjljMC4yMzgtMC4xMTMsMC40NzktMC4yODksMC43MjItMC41MzNsMC44NzksMC44MjJjLTAuMTgxLDAuMTgyLTAuMzU4LDAuMzM3LTAuNTM1LDAuNDY3DQoJCWMtMC4xNzQsMC4xMzEtMC4zNjMsMC4yNDItMC41NjUsMC4zMzFjLTAuMjA0LDAuMDkxLTAuNDI0LDAuMTU3LTAuNjYyLDAuMjAyYy0wLjIzNywwLjA0NS0wLjUwNywwLjA2Ny0wLjgwNCwwLjA2Nw0KCQljLTAuNDM0LDAtMC44MzYtMC4wNi0xLjIwOS0wLjE4M2MtMC4zNzQtMC4xMi0wLjY5OC0wLjMxOC0wLjk3My0wLjU5MmMtMC4yNzQtMC4yNzUtMC40OTQtMC42MzgtMC42NTUtMS4wODkNCgkJYy0wLjE2MS0wLjQ1LTAuMjQzLTEtMC4yNDMtMS42NDdjMC0xLjExNSwwLjI2NS0xLjk3OSwwLjc4OS0yLjU4NmMwLjUyNy0wLjYwOCwxLjIzMy0wLjkxMiwyLjExNS0wLjkxMg0KCQljMC40NTgsMCwwLjg2OCwwLjA4LDEuMjI5LDAuMjQ0YzAuMzYsMC4xNiwwLjY2MywwLjM4NiwwLjkxMiwwLjY3NGMwLjI0NiwwLjI4OCwwLjQzNiwwLjYzNiwwLjU2NSwxLjA0MQ0KCQljMC4xMzIsMC40MDMsMC4xOTcsMC44NTIsMC4xOTcsMS4zMzd2MC42MDZINTQuMTI5eiBNNTcuMjA4LDk5Ljc1NWMtMC4wMS0wLjIwNi0wLjAyNC0wLjM3NS0wLjA0OC0wLjUwNQ0KCQljLTAuMDIxLTAuMTMxLTAuMDctMC4yNzEtMC4xNDMtMC40MjZjLTAuMTA2LTAuMjYyLTAuMjc3LTAuNDcxLTAuNTEzLTAuNjI4Yy0wLjIzMy0wLjE1OC0wLjUxNC0wLjIzNy0wLjgzNi0wLjIzNw0KCQljLTAuMzI0LDAtMC42MDYsMC4wNzktMC44NDYsMC4yMzdjLTAuMjM3LDAuMTU3LTAuNDEyLDAuMzY2LTAuNTE5LDAuNjI4Yy0wLjA3MiwwLjE1NC0wLjExNywwLjI5NS0wLjEzNiwwLjQyNg0KCQljLTAuMDE4LDAuMTMtMC4wMzEsMC4yOTktMC4wMzksMC41MDVINTcuMjA4eiIvPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik02NC4xNjMsOTguNDk5Yy0wLjE1My0wLjE1Mi0wLjMwNC0wLjI2OC0wLjQ1MS0wLjM0NGMtMC4xNDktMC4wNzYtMC4zNC0wLjExNS0wLjU3NS0wLjExNQ0KCQljLTAuMzc4LDAtMC43LDAuMTM5LTAuOTY0LDAuNDEzYy0wLjI2OCwwLjI3My0wLjM5OCwwLjY0OC0wLjM5OCwxLjEyN3Y0LjE2MWgtMS4zNzl2LTYuODVoMS4zNTJ2MC43NDINCgkJYzAuMTc4LTAuMjQzLDAuNDMyLTAuNDM5LDAuNzU2LTAuNTkyYzAuMzI1LTAuMTU0LDAuNjc4LTAuMjMsMS4wNjctMC4yM2MwLjMzMywwLDAuNjMsMC4wNDksMC44OSwwLjE0OA0KCQljMC4yNjEsMC4xLDAuNTExLDAuMjY2LDAuNzQ0LDAuNDk5TDY0LjE2Myw5OC40OTl6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTcxLjI1NCwxMDEuNjQ3YzAsMC4zNTktMC4wNzEsMC42NzQtMC4yMTYsMC45NDRzLTAuMzQzLDAuNDk4LTAuNTk0LDAuNjgzDQoJCWMtMC4yNTIsMC4xODYtMC41NTMsMC4zMi0wLjkwNSwwLjQxM2MtMC4zNTEsMC4wODktMC43MjksMC4xMzMtMS4xMzMsMC4xMzNjLTAuNTYxLDAtMS4wNzctMC4wNjMtMS41NTUtMC4xOTQNCgkJYy0wLjQ3OC0wLjEzMi0wLjkxOS0wLjM5NS0xLjMyMy0wLjc5bDAuOTAzLTAuOTA1YzAuMjgsMC4yODgsMC41OTMsMC40NzksMC45MzksMC41NzRjMC4zNDgsMC4wOTQsMC42OTIsMC4xNDIsMS4wMzUsMC4xNDINCgkJYzAuNDIyLDAsMC43NzYtMC4wNzYsMS4wNjctMC4yMjljMC4yODctMC4xNTMsMC40MzItMC4zOTMsMC40MzItMC43MTZjMC0wLjIzNS0wLjA3MS0wLjQyMi0wLjIxLTAuNTYyDQoJCWMtMC4xNDEtMC4xNC0wLjM3Ni0wLjIyNC0wLjcxMS0wLjI0OGwtMS4wOTMtMC4wOTZjLTAuNjQ5LTAuMDU1LTEuMTQ4LTAuMjMxLTEuNDk5LTAuNTMyYy0wLjM1MS0wLjMwNS0wLjUyNi0wLjc1NS0wLjUyNi0xLjM2DQoJCWMwLTAuMzMyLDAuMDY2LTAuNjMsMC4yMDItMC44OWMwLjEzNC0wLjI2MSwwLjMxOC0wLjQ4LDAuNTU0LTAuNjU1YzAuMjMzLTAuMTc2LDAuNTA3LTAuMzExLDAuODE3LTAuNDA0DQoJCWMwLjMxMi0wLjA5NiwwLjY0Ni0wLjE0MywxLjAwNS0wLjE0M2MwLjUxNSwwLDAuOTg3LDAuMDU5LDEuNDE5LDAuMTc1YzAuNDMzLDAuMTE3LDAuODA1LDAuMzE1LDEuMTIyLDAuNTk2bC0wLjg2NCwwLjg3Ng0KCQljLTAuMjE2LTAuMTc5LTAuNDcxLTAuMzA3LTAuNzYzLTAuMzg1Yy0wLjI5NC0wLjA3NS0wLjYwNC0wLjExNC0wLjkyNi0wLjExNGMtMC40MTQsMC0wLjcyNiwwLjA4MS0wLjkzNCwwLjI0Mw0KCQljLTAuMjA2LDAuMTYzLTAuMzExLDAuMzczLTAuMzExLDAuNjM2YzAsMC4yMDYsMC4wNjUsMC4zNzksMC4xOTYsMC41MTljMC4xMzEsMC4xNDEsMC4zODIsMC4yMjgsMC43NSwwLjI2NmwxLjA3OSwwLjA5Mw0KCQljMC42NDksMC4wNTQsMS4xNTEsMC4yMzcsMS41MDgsMC41NDlDNzEuMDc3LDEwMC41NzIsNzEuMjU0LDEwMS4wMzQsNzEuMjU0LDEwMS42NDd6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTcyLjg5LDk1LjU0MXYtMS40NTloMS40NTd2MS40NTlINzIuODl6IE03Mi45MywxMDMuNzQxdi02Ljg1aDEuMzc2djYuODVINzIuOTN6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTc4LjUzNSwxMDMuNzQxYy0wLjMyNCwwLTAuNjA0LTAuMDU0LTAuODM4LTAuMTYzYy0wLjIzMy0wLjEwNi0wLjQyOC0wLjI0OS0wLjU4LTAuNDI2DQoJCWMtMC4xNTMtMC4xNzYtMC4yNjgtMC4zNzgtMC4zNDYtMC42MDdjLTAuMDc2LTAuMjI5LTAuMTE1LTAuNDY2LTAuMTE1LTAuNzA5di0zLjc2OWgtMC43ODJ2LTEuMDU0aDAuNzgydi0yLjA4aDEuMzc5djIuMDhoMS4zMjQNCgkJdjEuMDU0aC0xLjMyNHYzLjcwMWMwLDAuMjUyLDAuMDYxLDAuNDQ4LDAuMTg0LDAuNTg2YzAuMTIsMC4xNDEsMC4zMTMsMC4yMSwwLjU3MiwwLjIxaDAuNTY4djEuMTc3SDc4LjUzNXoiLz4NCgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNODMuMjY0LDEwNS4xMDRjLTAuMTI4LDAuMzYtMC4yOTQsMC42NDQtMC41MDIsMC44NTJjLTAuMTg4LDAuMTg5LTAuNDA0LDAuMzE5LTAuNjQ3LDAuMzkyDQoJCWMtMC4yNDIsMC4wNzEtMC40OTYsMC4xMDktMC43NTcsMC4xMDloLTAuNTUzdi0xLjI0M2gwLjM1MWMwLjI4OSwwLDAuNTAxLTAuMDUzLDAuNjM0LTAuMTU1YzAuMTM3LTAuMTA0LDAuMjUzLTAuMjk1LDAuMzUzLTAuNTc0DQoJCWwwLjM3OC0xLjA2N2wtMi4zOTEtNi41MjRoMS40NThsMS42MzYsNC44MjNsMS41OTItNC44MjNoMS40NzRMODMuMjY0LDEwNS4xMDR6Ii8+DQo8L2c+DQo8L3N2Zz4NCg==);
+                background-repeat:no-repeat;
+            }
+        </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="">
+    <form id="form1" runat="server">
+        <header id="header">
+        <div id="logo-group">
+
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+            <!-- Note: The activity badge color changes when clicked and resets the number to 0
+            Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+            <span id="activity" class="activity-dropdown"> <i class="fa fa-user"></i> <b class="badge"> 21 </b> </span>
+
+            <!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
+            <div class="ajax-dropdown">
+
+                <!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
+                <div class="btn-group btn-group-justified" data-toggle="buttons">
+                    <label class="btn btn-default">
+                        <input type="radio" name="activity" id="ajax/notify/mail.html">
+                        Msgs (14)
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="activity" id="ajax/notify/notifications.html">
+                        notify (3)
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="activity" id="ajax/notify/tasks.html">
+                        Tasks (4)
+                    </label>
+                </div>
+
+                <!-- notification content -->
+                <div class="ajax-notifications custom-scroll">
+
+                    <div class="alert alert-transparent">
+                        <h4>Click a button to show messages here</h4>
+                        This blank page message helps protect your privacy, or you can show the first message here automatically.
+                    </div>
+
+                    <i class="fa fa-lock fa-4x fa-border"></i>
+
+                </div>
+                <!-- end notification content -->
+                <!-- footer: refresh area -->
+                <span>
+                    Last updated on: 12/12/2013 9:43AM
+                    <button type="button" data-loading-text="
+                        <i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
+                        <i class="fa fa-refresh"></i>
+                    </button>
+                </span>
+                <!-- end footer -->
+
+            </div>
+            <!-- END AJAX-DROPDOWN -->
+        </div>
+
+        <!-- projects dropdown -->
+        <div id="project-context">
+
+            <span class="label">Projects:</span>
+            <span id="project-selector" class="popover-trigger-element dropdown-toggle" data-toggle="dropdown">Recent projects <i class="fa fa-angle-down"></i></span>
+
+            <!-- Suggestion: populate this list with fetch and push technique -->
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="javascript:void(0);">Online e-merchant management system - attaching integration with the iOS</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">Notes on pipeline upgradee</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">Assesment Report for merchant account</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="javascript:void(0);"><i class="fa fa-power-off"></i> Clear</a>
+                </li>
+            </ul>
+            <!-- end dropdown-menu-->
+
+        </div>
+        <!-- end projects dropdown -->
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+
+            <!-- collapse menu button -->
+            <div id="hide-menu" class="btn-header pull-right">
+                <span> <a href="javascript:void(0);" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+            </div>
+            <!-- end collapse menu -->
+            <!-- logout button -->
+            <div id="logout" class="btn-header transparent pull-right">
+                <span> <a href="login.html" title="Sign Out"><i class="fa fa-sign-out"></i></a> </span>
+            </div>
+            <!-- end logout button -->
+            <!-- search mobile button (this is hidden till mobile view port) -->
+            <div id="search-mobile" class="btn-header transparent pull-right">
+                <span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
+            </div>
+            <!-- end search mobile button -->
+            <!-- input: search field -->
+            <form action="#search.html" class="header-search pull-right">
+                <input type="text" placeholder="Find reports and more" id="search-fld">
+                <button type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+                <a href="javascript:void(0);" id="cancel-search-js" title="Cancel Search"><i class="fa fa-times"></i></a>
+            </form>
+            <!-- end input: search field -->
+            <!-- multiple lang dropdown : find all flags in the image folder -->
+            <ul class="header-dropdown-list hidden-xs">
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="img/flags/us.png"> <span> US </span> <i class="fa fa-angle-down"></i> </a>
+                    <ul class="dropdown-menu pull-right">
+                        <li class="active">
+                            <a href="javascript:void(0);"><img alt="" src="img/flags/us.png"> US</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><img alt="" src="img/flags/es.png"> Spanish</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><img alt="" src="img/flags/de.png"> German</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- end multiple lang -->
+
+        </div>
+        <!-- end pulled right: nav area -->
+
+    </header>
+
+        <aside id="left-panel">
+
+        <!-- User info -->
+        <div class="login-info">
+            <span>
+                <!-- User image size is adjusted inside CSS, it should stay as it -->
+
+                <a href="javascript:void(0);" id="show-shortcut">
+                    <img src="img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        john.doe
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+
+            </span>
+        </div>
+        <!-- end user info -->
+        <!-- NAVIGATION : This navigation is also responsive
+
+        To make this navigation dynamic please make sure to link the node
+        (the reference to the nav > ul) after page load. Or the navigation
+        will not initialize.
+        -->
+        <nav>
+            <!-- NOTE: Notice the gaps after each icon usage <i></i>..
+            Please note that these links work a bit different than
+            traditional hre="" links. See documentation for details.
+            -->
+
+            <ul>
+                <li <%= !this.IndexCheck ? "" : "class=\"active\"" %>>
+                    <a href="/admin/page/index.aspx" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">首页</span></a>
+                </li>
+                <li <%= !this.MsgCheck ? "" : "class=\"active\"" %>>
+                    <a href="/admin/page/onlineMsg.aspx"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">在线留言</span><span class="badge pull-right inbox-badge">14</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">关于Bcu</span></a>
+                    <ul>
+                        <li <%= !this.UniversityIdtCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/university.aspx">大学介绍</a>
+                        </li>
+                        <li <%= !this.CollegeIdtCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/college.aspx">学院介绍</a>
+                        </li>
+                        <li <%= !this.FacultyIdtCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/faculty.aspx">特色学院介绍</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">课程安排</span></a>
+                    <ul>
+                        <li <%= !this.StudyRequireCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/require.aspx">入学要求</a>
+                        </li>
+                        <li <%= !this.CourseMgtCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/course.aspx">课程管理</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">国内合作</span></a>
+                    <ul>
+                        <li <%= !this.DbcldgeCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/dbcldge.aspx">2+2双学士学位项目</a>
+                        </li>
+                        <li <%= !this.DMasterCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/dmaster.aspx">1+1 双硕士项目</a>
+                        </li>
+                        <li <%= !this.ExChangeCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/exchange.aspx">中英短期交流生项目</a>
+                        </li>
+                        <li <%= !this.ContratCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/cptcollege.aspx">国内合作学院</a>
+                        </li>
+                        <li <%= !this.SummerCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/sumschool.aspx">Summer School 英国学术夏令营</a>
+                        </li>
+                        <li <%= !this.FoundProCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/foundationpro.aspx">预科项目</a>
+                        </li>
+                    </ul>
+                </li>
+                <li >
+                    <a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i> <span class="menu-item-parent">下载中心</span></a>
+                    <ul>   
+                     <li <%= !this.FolderCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/folder.aspx">文件夹管理</a>
+                        </li>
+                        <li <%= !this.FileCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/attachment.aspx">文件管理</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-map-marker"></i> <span class="menu-item-parent">校园生活</span></a>
+                    <ul>
+                        <li <%= !this.StayCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/schoolstay.aspx">学校住宿</a>
+                        </li>
+                        <li <%= !this.ServiceCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/service.aspx">国际学生服务</a>
+                        </li>
+                        <li <%= !this.StudentCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/student.aspx">优秀毕业生</a>
+                        </li>
+                        <li <%= !this.ActivityCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/activity.aspx" target="_top">学生活动</a>
+                        </li>
+                        <li <%= !this.JobCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/job.aspx" target="_top">兼职机会</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-file"></i> <span class="menu-item-parent">HND升学</span></a>
+                    <ul>
+                        <li <%= !this.HNDStudyRequireCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/hndrequire.aspx">入学要求</a>
+                        </li>
+                        <li <%= !this.HNDCourseCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/hndcourse.aspx">课程对接</a>
+                        </li>
+                        <li <%= !this.HNDApplyGuidCheck ? "" : "class=\"active\"" %>>
+                            <a href="/admin/page/hndguid.aspx">申请指南</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <span class="minifyme"> <i class="fa fa-arrow-circle-left hit"></i> </span>
+
+    </aside>
+
+        <div id="main" role="main">
+
+        <!-- RIBBON -->
+        <div id="ribbon">
+
+            <span class="ribbon-button-alignment"> <span id="refresh" class="btn btn-ribbon" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true"><i class="fa fa-refresh"></i></span> </span>
+
+            <!-- breadcrumb -->
+            <ol class="breadcrumb">
+                <li>Home</li>
+                <li>Inbox</li>
+            </ol>
+            <!-- end breadcrumb -->
+            <!-- You can also add more buttons to the
+            ribbon for further usability
+
+            Example below:
+
+            <span class="ribbon-button-alignment pull-right">
+            <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+            <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+            <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+            </span> -->
+
+        </div>
+        <!-- END RIBBON -->
+        <!-- MAIN CONTENT -->
+        <div id="content">
+
+        <asp:ContentPlaceHolder ID="mainContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        </div>
+        <!-- END MAIN CONTENT -->
+    </div>
+    </form>
+    <!-- END MAIN PANEL -->
+    <!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+    Note: These tiles are completely responsive,
+    you can add as many as you like
+    -->
+    <div id="shortcut">
+        <ul>
+            <li>
+                <a href="#inbox.html" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
+            </li>
+            <li>
+                <a href="#calendar.html" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span> </span> </a>
+            </li>
+            <li>
+                <a href="#gmap-xml.html" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span> </span> </a>
+            </li>
+            <li>
+                <a href="#invoice.html" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>Invoice <span class="label pull-right bg-color-darken">99</span></span> </span> </a>
+            </li>
+            <li>
+                <a href="#gallery.html" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>My Profile </span> </span> </a>
+            </li>
+        </ul>
+    </div>
+    <!-- END SHORTCUT AREA -->
+    <!--================================================== -->
+    <!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+    <script data-pace-options='{ "restartOnRequestAfter": true }' src="../js/plugin/pace/pace.min.js"></script>
+
+    <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+    <!-- script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></!--script-->
+    <script>
+        if (!window.jQuery) {
+            document.write('<script src="../js/libs/jquery-2.0.2.min.js"><\/script>');
+        }
+    </script>
+
+    <!-- script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></!--script-->
+    <script>
+        if (!window.jQuery.ui) {
+            document.write('<script src="../js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+        }
+    </script>
+
+    <!-- JS TOUCH : include this plugin for mobile drag / drop touch events
+    <script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
+    <!-- BOOTSTRAP JS -->
+    <script src="../js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- CUSTOM NOTIFICATION -->
+    <script src="../js/notification/SmartNotification.min.js"></script>
+
+    <!-- JARVIS WIDGETS -->
+    <script src="../js/smartwidgets/jarvis.widget.min.js"></script>
+
+    <!-- SPARKLINES -->
+    <script src="../js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- browser msie issue fix -->
+    <script src="../js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+    <!-- FastClick: For mobile devices -->
+    <script src="../js/plugin/fastclick/fastclick.js"></script>
+
+    <!--[if IE 7]>
+
+    <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+    <![endif]-->
+    <!-- Demo purpose only -->
+    <script src="../js/demo.js"></script>
+
+    <!-- MAIN APP JS FILE -->
+    <script src="../js/app.js"></script>
+    <asp:ContentPlaceHolder ID="footContent" runat="server">
+
+    </asp:ContentPlaceHolder>
+</body>
+</html>

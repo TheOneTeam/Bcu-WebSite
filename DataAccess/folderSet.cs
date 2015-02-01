@@ -17,5 +17,6 @@ namespace DataAccess
         public int Id { get; set; }
         public string name { get; set; }
         public string path { get; set; }
+        public int sort { get; set; }
     }
 }

@@ -25,12 +25,16 @@ namespace DataAccess
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<activitySet> activitySet { get; set; }
         public DbSet<attachmentSet> attachmentSet { get; set; }
         public DbSet<collegeSet> collegeSet { get; set; }
         public DbSet<contactSet> contactSet { get; set; }
         public DbSet<cooperationSet> cooperationSet { get; set; }
         public DbSet<courseSet> courseSet { get; set; }
         public DbSet<folderSet> folderSet { get; set; }
+        public DbSet<jobSet> jobSet { get; set; }
         public DbSet<newsSet> newsSet { get; set; }
+        public DbSet<studentSet> studentSet { get; set; }
+        public DbSet<dictSet> dictSet { get; set; }
     }
 }
