@@ -64,13 +64,10 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="">下载中心</a>
-                                <div class="nav-two-div">
-                                    <a href="">学院申请表</a>
-                                    <a href="">BCU学生指南</a>
-                                    <a href="">学院宣传册</a>
-                                    <a href="">申请模板</a>
-                                </div>
+                                <a href="/page/news/newslist.aspx">新闻中心</a>
+                            </li>
+                            <li>
+                                <a href="/page/down/down.aspx">下载中心</a>
                             </li>
                             <li>
                                 <a href="">国内合作</a>

@@ -13,22 +13,58 @@
                 <div class="clear"></div>
             </div>
             <div class="page-lt">
-                <img class="page-hd-img" src="http://www.bcuchina.cn/images/a34.gif">
-                <div class="page-cont-txt">
-                    伯明翰城市大学（原中央英格兰大学）是英国最大的现代化，综合性的高等学府之一，其历史最早可追述到1843年。位于第二大城市伯明翰，大学共有25,000多名在校学生，其下属学院包括：<br>
-                    <span class="STYLE1">商学院<br>
-                        伯明翰艺术设计学院<br>
-                        教育,法律和社会科学学院<br>
-                        健康学院<br>
-                        表演,传媒和英语学院<br>
-                        技术、工程和环境学院<br>
-                        <img class="page-hd-img" src="http://www.bcuchina.cn/images/a34.gif">
-                    </span>大学提供语言，预科，本科，硕士、以及博士层次的教育，其专业设置广泛，涵盖了管理、建筑、艺术、环境科学、计算机、工程、教育、法律、社会科学及音乐等领域。由于出色的教学质量，学校的多项专业被英国高等教育质量评估委员会（QAA）
-                评为优秀。<br>
-                    大学所开设的课程以创意和实用著称，许多课程都和著名的跨国公司合作，并能获得专业机构的认证，从而为学生就业打下坚实的基础。大多数学生能在毕业后的六个月内找到工作，部分学生选择继续深造或接受培训。<br>
-                    大学一直致力于开展与中国的友好交流和合作，目前和多所中国知名大学建立了合作关系，如：上海交通大学，南京理工大学，哈尔滨工业大学，桂林工学院, 武汉理工大学，华中师范大学，大连海事大学，澳门理工学院等。<br>
-                    无论你来自哪里, 无论学习什么课程, 我们都能为你提供满意的服务。详情请看院系及专业信息。
-                </div>
+                <p class="fz13 tindent20">作为国际化的大都市，伯明翰能满足各种的住宿需求，包括学生宿舍，学校管理的私人住宅和寄宿家庭。只要在开学前提交申请，大学将优先为国际学生安排就读期间的校园住宿。</p>
+                <p class="fz13 tindent20">大多数学生住宿是自炊的，即学生需要自己做饭，并打扫房间卫生。所有房间都有家具，电话和互联网。厨房设有炉具，冰箱，微波炉但不包括餐具。租金包括暖气，水，电。</p>
+                <p class="fz13 tindent20">如及时申请，所有中国学生都能获得入住校园宿舍的机会。每个学生有自己的房间，可以在宿舍里上网。</p>
+                <p class="fz13 tindent20">同时，学校可以向愿意住在校外的学生提供房源信息，协助其找到合适的住宿。学生在抵达伯明翰时，大学会安排工作人员及志愿者会在伯明翰机场设立咨询台迎接学生并指引学生如何抵达宿舍。</p>
+                <p class="fz13 tindent20">具体住宿信息请查阅： http://www.bcu.ac.uk/student-info/accommodation</p>
+                <table class="bcu-tb1 bcu-tb2" border="1">
+                    <tr>
+                        <th><b class="fz13">住宿名称</b></th>
+                        <th><b class="fz13">房间类型</b></th>
+                        <th><b class="fz13">地理位置</b></th>
+                        <th><b class="fz13">优先安排</b></th>
+                        <th><b class="fz13">每周价格</b></th>
+                    </tr>
+                    <tr>
+                        <td>Oscott Gardens</td>
+                        <td>5-8 间卧室的公寓, 公用厨房，卧室自带卫生间</td>
+                        <td>Perry Barr,靠近城北校区</td>
+                        <td>城北校区的学生</td>
+                        <td>标准 - ￡116.00<br />大房 - ￡127.00<br />加大房-￡132.00</td>
+                    </tr>
+                    <tr>
+                        <td>The Coppice</td>
+                        <td>6间卧室的公寓，公用洗手间</td>
+                        <td>Perry Barr,靠近城北校区</td>
+                        <td>城北校区的学生</td>
+                        <td>￡100.00起</td>
+                    </tr>
+                    <tr>
+                        <td>Oakmount Hall</td>
+                        <td>4-10间卧室的公寓</td>
+                        <td>距市中心2公里</td>
+                        <td>城南校区(健康专业的学生)</td>
+                        <td>￡99.00起</td>
+                    </tr>
+                    <tr>
+                        <td>Westmount Hall</td>
+                        <td>4-10间卧室的公寓 </td>
+                        <td>距市中心2公里</td>
+                        <td>城南校区(健康专业的学生)</td>
+                        <td>￡98.00起</td>
+                    </tr>
+                    <tr>
+                        <td>Private Halls</td>
+                        <td>公寓，公用厨房，卧室自带卫生间</td>
+                        <td>市中心</td>
+                        <td>技术工程学院、音乐学院、媒体学院和艺术设计学院的学生</td>
+                        <td>￡105.52--￡114.50</td>
+                    </tr>
+                </table>
+                <div class="fz14 m-t10 m-b10"><b>*以上为2014年9月入学学生住宿价格，仅供参考。</b></div>
+                <img src="../../Images/kecheng/bg9.jpg" />
+                <img src="../../Images/kecheng/bg10.jpg" />
             </div>
             <div class="page-rt">
                 <div class="page-block">

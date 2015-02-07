@@ -1,14 +1,14 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Site.Master" CodeBehind="colleges.aspx.cs" Inherits="WebSite.page.about.colleges" %>
 <asp:Content runat="server" ID="TitleContent" ContentPlaceHolderID="TitleContent">
-    <title>学院介绍</title>
+    <title>学部介绍</title>
 </asp:Content>
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <div class="container rel">
         <div class="page-cont">
             <div class="page-tt">
-                <h1 class="page-h1 lt">特色学院介绍</h1>
+                <h1 class="page-h1 lt">学院介绍</h1>
                 <div class="page-menu rt">
-                    <a href="/">返回首页</a>><a>特色学院介绍</a>
+                    <a href="/">返回首页</a>><a>学院介绍</a>
                 </div>
                 <div class="clear"></div>
             </div>

@@ -13,21 +13,43 @@
                 <div class="clear"></div>
             </div>
             <div class="page-lt">
-                <img class="page-hd-img" src="http://www.bcuchina.cn/images/a34.gif">
-                <div class="page-cont-txt">
-                    伯明翰城市大学（原中央英格兰大学）是英国最大的现代化，综合性的高等学府之一，其历史最早可追述到1843年。位于第二大城市伯明翰，大学共有25,000多名在校学生，其下属学院包括：<br>
-                    <span class="STYLE1">商学院<br>
-                        伯明翰艺术设计学院<br>
-                        教育,法律和社会科学学院<br>
-                        健康学院<br>
-                        表演,传媒和英语学院<br>
-                        技术、工程和环境学院<br>
-                    </span>大学提供语言，预科，本科，硕士、以及博士层次的教育，其专业设置广泛，涵盖了管理、建筑、艺术、环境科学、计算机、工程、教育、法律、社会科学及音乐等领域。由于出色的教学质量，学校的多项专业被英国高等教育质量评估委员会（QAA）
-                评为优秀。<br>
-                    大学所开设的课程以创意和实用著称，许多课程都和著名的跨国公司合作，并能获得专业机构的认证，从而为学生就业打下坚实的基础。大多数学生能在毕业后的六个月内找到工作，部分学生选择继续深造或接受培训。<br>
-                    大学一直致力于开展与中国的友好交流和合作，目前和多所中国知名大学建立了合作关系，如：上海交通大学，南京理工大学，哈尔滨工业大学，桂林工学院, 武汉理工大学，华中师范大学，大连海事大学，澳门理工学院等。<br>
-                    无论你来自哪里, 无论学习什么课程, 我们都能为你提供满意的服务。详情请看院系及专业信息。
-                </div>
+                <div class="fz14 m-t10 m-b10"><b>将常规申请材料发送至application@bcuchina.cn:</b></div>
+                <ul class="page-ol">
+                    <li><span>申请表（可在www.bcuchina.cn下载）</span></li>
+                    <li><span>在读证明</span></li>
+                    <li><span>成绩单</span></li>  
+                    <li><span>雅思/ PTE成绩单</span></li> 
+                    <li><span>护照</span></li> 
+                    <li><span>成绩单</span></li>                                   
+                </ul>
+                <div class="fz13 m-t10">*注：语言课不需要单独申请，我们将根据你的英语成绩搭配相应课程。</div>
+                <div class="fz14 m-t10 m-b10"><b>英语强化课程</b></div>
+                <p class="fz13 tindent20">雅思成绩为5.0分（且单项不低于4.5分）的学生需要参加10周的英语强化课程。 </p>
+                <p class="fz13 tindent20">雅思成绩为5.5分（且单项不低于5.0分）的学生需要参加6周的英语强化课程</p>
+                <p class="fz13 tindent20">顺利完成该课程后，学生可以直接进入学位课程的学习，无需再参加雅思考试。</p>
+
+
+                <div class="fz14 m-t10 m-b10"><b>奖学金</b></div>
+                <p class="fz13 tindent20">大学历年来都对HND项目学生提供特殊的奖学金鼓励政策。近几年我们都为HND学生提供6周免费的英语强化课程。无论是否达到大学语言要求，学生都可获得6周免费课程的学习。大学会继续为HND学生提供奖学金。每年最新的奖学金政策可以从中国代表处获得。每年最新的奖学金政策可以从中国代表处获得。</p>
+                <p class="fz13 tindent20">*在2015年5月10日前确定报读我校并支付3000英镑押金的SQA-HND学生，可得到1560英镑的奖学金（即免费就读6周学前语言班）。</p>
+                                
+                <div class="fz14 m-t10 m-b10"><b>一次性付费优惠</b></div>
+                <p class="fz13 tindent20">HND项目学生在注册时或之前一次性缴付学费将自动享受300英镑学费的优惠。</p>
+                
+                <div class="fz14 m-t10 m-b10"><b>直升硕士</b></div>
+                <p class="fz13 tindent20">顺利完成本科最后一年的学生，可以直接申请本校硕士课程，并可获得学费减免。详情请咨询中国代表处。</p>
+                <div class="fz14 m-t10 m-b10"><b>学费押金</b></div>
+
+                <p class="fz13 tindent20">金额：3000英镑</p>
+                <p class="fz13 tindent20">支付方式：电汇或者在线支付。银行账号等信息请咨询中国代表处。</p>
+                <p class=""><img src="../../Images/hnd/bg1.jpg" /></p>
+                <p class="">
+                    <img src="../../Images/hnd/bg2.jpg" /></p>
+
+
+                <div class="fz14 m-t10 m-b10"><b>15年9月启用新校区-Curzon Building,如图：</b></div>
+                <img src="../../Images/bcu/bg16.jpg" />
+                <img src="../../Images/bcu/bg17.jpg" />
             </div>
             <div class="page-rt">
                 <div class="page-block">

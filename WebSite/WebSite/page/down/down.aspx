@@ -14,56 +14,30 @@
             </div>
             <ul class="down-ul">
                 <li class="">
-                    <a class="down-link">
-                        <img src="../../Images/test/team-1.jpg" />
-                    </a>
-                    入学文档
+                    <a class="down-link"></a>
+                    BCU学生指南内容及图片
                 </li>
                 <li class="">
                     <a class="down-link">
-                        <img src="../../Images/test/team-1.jpg" />
                     </a>
-                    入学文档
+                    申请模板
                 </li>  
                 <li class="">
                     <a class="down-link">
-                        <img src="../../Images/test/team-1.jpg" />
                     </a>
-                    入学文档
+                    文件目录内容、图片
                 </li>  
                 <li class="">
                     <a class="down-link">
-                        <img src="../../Images/test/team-1.jpg" />
                     </a>
-                    入学文档
+                    学校申请表表及模板
                 </li>  
                 <li class="">
                     <a class="down-link">
-                        <img src="../../Images/test/team-1.jpg" />
                     </a>
-                    入学文档
-                </li>      
-                <li class="">
-                    <a class="down-link">
-                        <img src="../../Images/test/team-1.jpg" />
-                    </a>
-                    入学文档
-                </li>  
-                <li class="">
-                    <a class="down-link">
-                        <img src="../../Images/test/team-1.jpg" />
-                    </a>
-                    入学文档
-                </li>  
-                <li class="">
-                    <a class="down-link">
-                        <img src="../../Images/test/team-1.jpg" />
-                    </a>
-                    入学文档
-                </li>              
-            </ul>
-  
-                        
+                    学院宣传册
+                </li>        
+            </ul>   
             <div class="clear"></div>
         </div>
     </div>

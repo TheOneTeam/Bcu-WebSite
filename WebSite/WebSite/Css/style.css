@@ -65,7 +65,7 @@
 .ct-tps-btn { width: 165px; height: 48px; line-height: 48px; font-size: 18px; font-family: "微软雅黑"; margin: 20px 0px 0px 30px; text-align: center; color: #fff; background: #6091ba;display: inline-block;}
 
 .page-cont{ padding: 20px;}
-.page-lt{ width: 800px; float: left;}
+.page-lt{ width: 800px; float: left; line-height: 25px;}
 .page-rt{ width:252px; float: right;}
 .page-hd-img{ width: 800px; height: 200px;}
 .page-tt{ border-bottom: 1px solid #e8e8e8; margin-bottom: 30px; height: 48px;}
@@ -93,11 +93,32 @@
 .kc-list-name:hover{ }
 .other-link{ color:#fff; background: #84aac9; font-size: 12px; padding: 2px 15px; margin-top: 5px; display: inline-block;}
 .other-link:hover{ background: #84AAC9; color: #fff; text-decoration: none;}
-.down-link{ display: block; padding: 5px; border: 1px solid #e6e6e6;}
-.down-link img{ width: 250px; height: 150px;}
+.down-link{ display: block; padding: 5px; background: url(../images/filejia.png) no-repeat center top; width: 250px; height: 200px; line-height: 350px;}
 .down-ul li{ float: left; text-align: center; line-height: 30px; font-size: 14px; font-weight: bold; margin: 0px 10px 10px 10px;}
 .job-dl{ border: 1px solid #DDDDDD; line-height: 25px; border-bottom: none; border-radius: 2px; margin-bottom: 30px;}
 .job-dl dt h2{ font-size: 14px; font-weight: bold;}
 .job-dl dt,.job-dl dd{ border-bottom: 1px solid #DDDDDD; padding: 5px 10px;}
 .job-dl dt{ background: #F5F5F5;}
 .ablue{ color: #609DCE;}
+.page-h1-tt{ font-size: 16px; font-weight: bold; line-height: 35px;}
+.page-h2-tt{ fotn-size: 14px; font-weight: bold; color: green;}
+.page-ol{ line-height: 30px; margin: 10px 0px;}
+.page-ol li{ list-style: disc; margin-left: 40px; font-size: 20px;}
+.page-ol li span{ font-size: 12px;}
+.page-bd-div{ border-left: 6px solid #A7C2D9; padding: 5px 10px; font-size: 12px; margin: 15px 0px; color: #777;}
+.yk-tb{ border: 1px solid #A7A9AC; width: 760px; margin: auto;}
+.yk-tb thead td{ font-size: 14px; font-weight: bold; color: green;}
+.yk-tb td{ padding: 5px 10px;}
+.yk-ul1 li{ list-style: disc; line-height: 20px;margin: 10px 0px; margin-left: 30px; padding: 15px;}
+.hz-school li{ float: left; width: 200px; height:230px; margin: 15px; border: 1px solid #999999; padding: 10px; text-align: center; line-height: 30px;}
+.hz-school li img{ max-width: 200px; max-height: 200px; display: block; margin: auto;}
+.hz-school li a{ font-size: 14px; font-weight: bold; display: block;}
+.page-p1{ margin: 5px 0px; text-indent: 20px;}
+.page-ol1 li{ list-style:decimal; margin-left: 30px;}
+.fz13{ font-size: 13px;}
+.fz14{ font-size: 14px;}
+.tindent20 {text-indent: 20px;}
+.bcu-tb1{ border: 1px solid #cbcbcb; width: 100%; }
+.bcu-tb1 td{ vertical-align: top;}
+.bcu-tb1 th{ padding: 10px; text-align: left;}
+.bcu-tb2 td{ padding: 5px 10px; width: 20%;}

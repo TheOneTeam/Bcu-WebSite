@@ -880,9 +880,88 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Css\fw.css" />
     <Content Include="Css\style.css" />
+    <Content Include="Images\1.jpg" />
+    <Content Include="Images\2.jpg" />
+    <Content Include="Images\3.jpg" />
+    <Content Include="Images\4.jpg" />
+    <Content Include="Images\5.jpg" />
+    <Content Include="Images\a21.gif" />
+    <Content Include="Images\a22.gif" />
+    <Content Include="Images\a4.gif" />
     <Content Include="Images\accent.png" />
+    <Content Include="Images\activity.jpg" />
+    <Content Include="Images\activity_list.jpg" />
+    <Content Include="Images\bcldge1.jpg" />
+    <Content Include="Images\bcldge2.jpg" />
+    <Content Include="Images\bcu\bg1.jpg" />
+    <Content Include="Images\bcu\bg10.jpg" />
+    <Content Include="Images\bcu\bg11.jpg" />
+    <Content Include="Images\bcu\bg12.jpg" />
+    <Content Include="Images\bcu\bg13.jpg" />
+    <Content Include="Images\bcu\bg14.jpg" />
+    <Content Include="Images\bcu\bg15.jpg" />
+    <Content Include="Images\bcu\bg16.jpg" />
+    <Content Include="Images\bcu\bg17.jpg" />
+    <Content Include="Images\bcu\bg18.jpg" />
+    <Content Include="Images\bcu\bg19.jpg" />
+    <Content Include="Images\bcu\bg2.jpg" />
+    <Content Include="Images\bcu\bg20.jpg" />
+    <Content Include="Images\bcu\bg21.jpg" />
+    <Content Include="Images\bcu\bg22.jpg" />
+    <Content Include="Images\bcu\bg23.jpg" />
+    <Content Include="Images\bcu\bg24.jpg" />
+    <Content Include="Images\bcu\bg25.jpg" />
+    <Content Include="Images\bcu\bg26.jpg" />
+    <Content Include="Images\bcu\bg27.jpg" />
+    <Content Include="Images\bcu\bg28.jpg" />
+    <Content Include="Images\bcu\bg3.jpg" />
+    <Content Include="Images\bcu\bg4.jpg" />
+    <Content Include="Images\bcu\bg5.jpg" />
+    <Content Include="Images\bcu\bg6.jpg" />
+    <Content Include="Images\bcu\bg7.jpg" />
+    <Content Include="Images\bcu\bg8.jpg" />
+    <Content Include="Images\bcu\bg9.jpg" />
+    <Content Include="Images\bg-map.png" />
     <Content Include="Images\bullet.png" />
+    <Content Include="Images\db1.jpg" />
+    <Content Include="Images\db2.jpg" />
+    <Content Include="Images\db3.jpg" />
+    <Content Include="Images\db4.jpg" />
+    <Content Include="Images\db5.jpg" />
+    <Content Include="Images\db6.jpg" />
+    <Content Include="Images\doctor1.jpg" />
+    <Content Include="Images\doctor2.jpg" />
+    <Content Include="Images\englishcourse.jpg" />
+    <Content Include="Images\ewm.png" />
+    <Content Include="Images\filejia.png" />
     <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\hnd\bg1.jpg" />
+    <Content Include="Images\hnd\bg2.jpg" />
+    <Content Include="Images\imgview1.jpg" />
+    <Content Include="Images\imgview2.jpg" />
+    <Content Include="Images\imgview3.jpg" />
+    <Content Include="Images\imgview4.jpg" />
+    <Content Include="Images\imgview5.jpg" />
+    <Content Include="Images\iphone-app.gif" />
+    <Content Include="Images\kecheng\bg1.jpg" />
+    <Content Include="Images\kecheng\bg10.jpg" />
+    <Content Include="Images\kecheng\bg2.jpg" />
+    <Content Include="Images\kecheng\bg3.png" />
+    <Content Include="Images\kecheng\bg4.jpg" />
+    <Content Include="Images\kecheng\bg5.jpg" />
+    <Content Include="Images\kecheng\bg6.jpg" />
+    <Content Include="Images\kecheng\bg7.jpg" />
+    <Content Include="Images\kecheng\bg8.jpg" />
+    <Content Include="Images\kecheng\bg9.jpg" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\master1.jpg" />
+    <Content Include="Images\master2.jpg" />
+    <Content Include="Images\news-thumb-1.jpg" />
+    <Content Include="Images\news-thumb-2.jpg" />
+    <Content Include="Images\news-thumb-3.jpg" />
+    <Content Include="Images\news-thumb-4.jpg" />
+    <Content Include="Images\news-thumb-5.jpg" />
+    <Content Include="Images\news-thumb-6.jpg" />
     <Content Include="Images\orderedList0.png" />
     <Content Include="Images\orderedList1.png" />
     <Content Include="Images\orderedList2.png" />
@@ -896,6 +975,35 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\require1.jpg" />
+    <Content Include="Images\require2.jpg" />
+    <Content Include="Images\school\chuanmei.jpg" />
+    <Content Include="Images\school\dizhi.jpg" />
+    <Content Include="Images\school\guangzhou.png" />
+    <Content Include="Images\school\huaqiao.jpg" />
+    <Content Include="Images\school\nanjin.png" />
+    <Content Include="Images\school\shanghai.jpg" />
+    <Content Include="Images\school\shenzhen.png" />
+    <Content Include="Images\school\sichuan.jpg" />
+    <Content Include="Images\school\wuhan.png" />
+    <Content Include="Images\school\xiamen.jpg" />
+    <Content Include="Images\slide-1.jpg" />
+    <Content Include="Images\slide-2.jpg" />
+    <Content Include="Images\slide-3.jpg" />
+    <Content Include="Images\slide-4.jpg" />
+    <Content Include="Images\test\team-1.jpg" />
+    <Content Include="Images\test\team-2.jpg" />
+    <Content Include="Images\test\team-3.jpg" />
+    <Content Include="Images\test\team-4.jpg" />
+    <Content Include="Images\ykbg1.jpg" />
+    <Content Include="Images\ykbg2.jpg" />
+    <Content Include="Images\ykbg3.jpg" />
+    <Content Include="Images\ykbg4.jpg" />
+    <Content Include="Images\ykbg5.jpg" />
+    <Content Include="Images\ykbg6.jpg" />
+    <Content Include="Images\ykbg7.jpg" />
+    <Content Include="Images\ykbg8.jpg" />
+    <Content Include="Images\ykbg9.png" />
     <Content Include="lib\Newtonsoft.Json.dll" />
     <Content Include="packages.config" />
     <Content Include="DataProvider\Home.ashx" />
@@ -971,16 +1079,21 @@
     <Content Include="page\course\bcldge.aspx" />
     <Content Include="page\course\doctor.aspx" />
     <Content Include="page\course\english.aspx" />
+    <Content Include="page\course\list.aspx" />
     <Content Include="page\course\masterdge.aspx" />
     <Content Include="page\down\down.aspx" />
     <Content Include="page\hnd\admisrequire.aspx" />
     <Content Include="page\hnd\course.aspx" />
     <Content Include="page\hnd\guide.aspx" />
     <Content Include="page\live\activity.aspx" />
+    <Content Include="page\live\activitydetail.aspx" />
+    <Content Include="page\live\jobDetial.aspx" />
     <Content Include="page\live\parttimejob.aspx" />
     <Content Include="page\live\service.aspx" />
     <Content Include="page\live\stay.aspx" />
     <Content Include="page\live\student.aspx" />
+    <Content Include="page\news\newsdetail.aspx" />
+    <Content Include="page\news\newslist.aspx" />
     <Content Include="resource\activity\1.jpg" />
     <Content Include="resource\activity\10.jpg" />
     <Content Include="resource\activity\11.jpg" />
@@ -1388,6 +1501,13 @@
     <Compile Include="page\course\english.aspx.designer.cs">
       <DependentUpon>english.aspx</DependentUpon>
     </Compile>
+    <Compile Include="page\course\list.aspx.cs">
+      <DependentUpon>list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="page\course\list.aspx.designer.cs">
+      <DependentUpon>list.aspx</DependentUpon>
+    </Compile>
     <Compile Include="page\course\masterdge.aspx.cs">
       <DependentUpon>masterdge.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1430,6 +1550,20 @@
     <Compile Include="page\live\activity.aspx.designer.cs">
       <DependentUpon>activity.aspx</DependentUpon>
     </Compile>
+    <Compile Include="page\live\activitydetail.aspx.cs">
+      <DependentUpon>activitydetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="page\live\activitydetail.aspx.designer.cs">
+      <DependentUpon>activitydetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="page\live\jobDetial.aspx.cs">
+      <DependentUpon>jobDetial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="page\live\jobDetial.aspx.designer.cs">
+      <DependentUpon>jobDetial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="page\live\parttimejob.aspx.cs">
       <DependentUpon>parttimejob.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1457,6 +1591,20 @@
     </Compile>
     <Compile Include="page\live\student.aspx.designer.cs">
       <DependentUpon>student.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="page\news\newsdetail.aspx.cs">
+      <DependentUpon>newsdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="page\news\newsdetail.aspx.designer.cs">
+      <DependentUpon>newsdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="page\news\newslist.aspx.cs">
+      <DependentUpon>newslist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="page\news\newslist.aspx.designer.cs">
+      <DependentUpon>newslist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
